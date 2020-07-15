@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>干货小栈</title>
+  
+  <subtitle>技术潘</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://gitthink.github.io/"/>
+  <updated>2020-07-14T03:05:03.148Z</updated>
+  <id>https://gitthink.github.io/</id>
+  
+  <author>
+    <name>技术潘</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS规范</title>
+    <link href="https://gitthink.github.io/categories/frontend/83dcefb7.html"/>
+    <id>https://gitthink.github.io/categories/frontend/83dcefb7.html</id>
+    <published>2020-07-14T02:50:41.000Z</published>
+    <updated>2020-07-14T03:05:03.148Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;分类方法&quot;&gt;&lt;a href=&quot;#分类方法&quot; class=&quot;headerlink&quot; title=&quot;分类方法&quot;&gt;&lt;/a&gt;分类方法&lt;/h2&gt;&lt;h3 id=&quot;CSS文件的分类和引用顺序&quot;&gt;&lt;a href=&quot;#CSS文件的分类和引用顺序&quot; class=&quot;headerlink&quot; title=&quot;CSS文件的分类和引用顺序&quot;&gt;&lt;/a&gt;CSS文件的分类和引用顺序&lt;/h3&gt;&lt;p&gt;通常，一个项目我们只引用一个CSS，但是对于较大的项目，我们需要把CSS文件进行分类。&lt;br&gt;我们按照CSS的性质和用途，将CSS文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。&lt;br&gt;1.公共型样式：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局”、“通用模块和其扩展”、“元件和其扩展”、“功能类样式”、“皮肤类样式”。&lt;br&gt;2.特殊型样式：当某个栏目或页面的样式与网站整体差异较大或者维护率较高时，可以独立引用一个样式：“特殊的布局、模块和元件及扩展”、“特殊的功能、颜色和背景”，也可以是某个大型控件或模块的独立样式。&lt;br&gt;3.皮肤型样式：如果产品需要换肤功能，那么我们需要将颜色、背景等抽离出来放在这里。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;link href=&amp;quot;assets/css/global.css&amp;quot; /&amp;gt;
+&amp;lt;link href=&amp;quot;assets/css/index.css&amp;quot; /&amp;gt;
+&amp;lt;link href=&amp;quot;assets/css/skin.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://gitthink.github.io/categories/frontend/"/>
+    
+    
+      <category term="CSS" scheme="https://gitthink.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bootstrap3网格系统兼容IE7</title>
+    <link href="https://gitthink.github.io/categories/frontend/6dd28e9b.html"/>
+    <id>https://gitthink.github.io/categories/frontend/6dd28e9b.html</id>
+    <published>2019-09-02T08:25:33.000Z</published>
+    <updated>2020-07-14T03:07:40.637Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;HTML基本结构&quot;&gt;&lt;a href=&quot;#HTML基本结构&quot; class=&quot;headerlink&quot; title=&quot;HTML基本结构&quot;&gt;&lt;/a&gt;HTML基本结构&lt;/h2&gt;&lt;pre class=&quot; language-html&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://gitthink.github.io/categories/frontend/"/>
+    
+    
+      <category term="CSS" scheme="https://gitthink.github.io/tags/css/"/>
+    
+      <category term="Bootstrap" scheme="https://gitthink.github.io/tags/bootstrap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用户的创建、删除与修改</title>
+    <link href="https://gitthink.github.io/categories/database/af86add3.html"/>
+    <id>https://gitthink.github.io/categories/database/af86add3.html</id>
+    <published>2019-06-03T07:03:22.000Z</published>
+    <updated>2020-07-14T03:46:47.493Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;创建用户&quot;&gt;&lt;a href=&quot;#创建用户&quot; class=&quot;headerlink&quot; title=&quot;创建用户&quot;&gt;&lt;/a&gt;创建用户&lt;/h2&gt;&lt;p&gt;首先要进入我们的admin库中，进入方法是直接使用use admin 就可以。进入后可以使用show
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>全文索引</title>
+    <link href="https://gitthink.github.io/categories/database/3f39b042.html"/>
+    <id>https://gitthink.github.io/categories/database/3f39b042.html</id>
+    <published>2019-05-30T01:57:05.000Z</published>
+    <updated>2020-07-14T03:44:59.637Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>复合索引</title>
+    <link href="https://gitthink.github.io/categories/database/483e80d4.html"/>
+    <id>https://gitthink.github.io/categories/database/483e80d4.html</id>
+    <published>2019-05-29T07:54:20.000Z</published>
+    <updated>2020-07-14T03:43:19.845Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;索引中的小坑&quot;&gt;&lt;a href=&quot;#索引中的小坑&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>索引入门</title>
+    <link href="https://gitthink.github.io/categories/database/d137d16e.html"/>
+    <id>https://gitthink.github.io/categories/database/d137d16e.html</id>
+    <published>2019-05-27T08:53:13.000Z</published>
+    <updated>2020-07-14T03:41:25.973Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;普通查询性能&quot;&gt;&lt;a href=&quot;#普通查询性能&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB构造百万级数据</title>
+    <link href="https://gitthink.github.io/categories/database/a630e1f8.html"/>
+    <id>https://gitthink.github.io/categories/database/a630e1f8.html</id>
+    <published>2019-05-24T09:01:28.000Z</published>
+    <updated>2020-07-14T03:41:51.141Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;制作随机数方法&quot;&gt;&lt;a href=&quot;#制作随机数方法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>find如何在js文本中使用</title>
+    <link href="https://gitthink.github.io/categories/database/3854745b.html"/>
+    <id>https://gitthink.github.io/categories/database/3854745b.html</id>
+    <published>2019-05-16T04:00:12.000Z</published>
+    <updated>2020-07-14T03:41:57.374Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;hasNext循环结果&quot;&gt;&lt;a href=&quot;#hasNext循环结果&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>find的参数使用方法</title>
+    <link href="https://gitthink.github.io/categories/database/4f5344cd.html"/>
+    <id>https://gitthink.github.io/categories/database/4f5344cd.html</id>
+    <published>2019-05-14T03:32:38.000Z</published>
+    <updated>2020-07-14T03:35:43.590Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;find参数&quot;&gt;&lt;a href=&quot;#find参数&quot; class=&quot;headerlink&quot; title=&quot;find参数&quot;&gt;&lt;/a&gt;find参数&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;query: 查询条件，MongoDB默认的第一个参数。&lt;/li&gt;
+&lt;li&gt;fields:
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>find的数组查询</title>
+    <link href="https://gitthink.github.io/categories/database/d65a1577.html"/>
+    <id>https://gitthink.github.io/categories/database/d65a1577.html</id>
+    <published>2019-05-13T02:09:43.000Z</published>
+    <updated>2020-07-14T03:35:09.613Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;完善数据&quot;&gt;&lt;a href=&quot;#完善数据&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>find的多条件查询</title>
+    <link href="https://gitthink.github.io/categories/database/a15d25e1.html"/>
+    <id>https://gitthink.github.io/categories/database/a15d25e1.html</id>
+    <published>2019-05-10T11:44:24.000Z</published>
+    <updated>2020-07-14T03:32:42.205Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;很多时候我们需要查询的值不只是有一个简单的条件，比如我们现在要查询一下同事中是20岁和26岁的，还比如我们要查询同事中大于25岁并且会PhotoShop技能的。MongoDB在这方面也支持的很好。&lt;/p&gt;
+&lt;h2 id=&quot;in修饰符&quot;&gt;&lt;a href=&quot;#in修饰符&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>find的不等修饰符</title>
+    <link href="https://gitthink.github.io/categories/database/af88765b.html"/>
+    <id>https://gitthink.github.io/categories/database/af88765b.html</id>
+    <published>2019-05-09T09:39:54.000Z</published>
+    <updated>2020-07-14T03:31:32.718Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;构造数据&quot;&gt;&lt;a href=&quot;#构造数据&quot; class=&quot;headerlink&quot; title=&quot;构造数据&quot;&gt;&lt;/a&gt;构造数据&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;var
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>状态返回与安全</title>
+    <link href="https://gitthink.github.io/categories/database/fa005713.html"/>
+    <id>https://gitthink.github.io/categories/database/fa005713.html</id>
+    <published>2019-05-08T02:11:23.000Z</published>
+    <updated>2020-07-14T03:30:12.965Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;应答式写入&quot;&gt;&lt;a href=&quot;#应答式写入&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>update数组修改器</title>
+    <link href="https://gitthink.github.io/categories/database/6abf4a82.html"/>
+    <id>https://gitthink.github.io/categories/database/6abf4a82.html</id>
+    <published>2019-05-05T02:09:00.000Z</published>
+    <updated>2020-07-14T03:28:54.589Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;push追加数组-内嵌文档值&quot;&gt;&lt;a href=&quot;#push追加数组-内嵌文档值&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初识update修改器</title>
+    <link href="https://gitthink.github.io/categories/database/1db87a14.html"/>
+    <id>https://gitthink.github.io/categories/database/1db87a14.html</id>
+    <published>2019-04-29T00:57:53.000Z</published>
+    <updated>2020-07-14T03:25:41.694Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;set修改器&quot;&gt;&lt;a href=&quot;#set修改器&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>update常见错误</title>
+    <link href="https://gitthink.github.io/categories/database/84b12bae.html"/>
+    <id>https://gitthink.github.io/categories/database/84b12bae.html</id>
+    <published>2019-04-28T02:24:12.000Z</published>
+    <updated>2020-07-14T03:23:41.197Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;错误：只update修改项&quot;&gt;&lt;a href=&quot;#错误：只update修改项&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>批量插入的正确方法</title>
+    <link href="https://gitthink.github.io/categories/database/f3b61b38.html"/>
+    <id>https://gitthink.github.io/categories/database/f3b61b38.html</id>
+    <published>2019-04-26T06:17:05.000Z</published>
+    <updated>2020-07-14T03:22:11.549Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在操作数据库时要注意两个能力：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一个是快速存储能力。&lt;/li&gt;
+&lt;li&gt;第二个是方便迅速查询能力。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;批量插入&quot;&gt;&lt;a href=&quot;#批量插入&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用js文件写mongo命令</title>
+    <link href="https://gitthink.github.io/categories/database/55679ed1.html"/>
+    <id>https://gitthink.github.io/categories/database/55679ed1.html</id>
+    <published>2019-04-26T03:49:27.000Z</published>
+    <updated>2020-07-14T03:20:38.886Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;把命令写入JS中： 现在模拟一个用户登录日志表的信息，用JS进行编写。新在一个新建的目录下，比如D:/mongoShell/，新建一个goTask.js文件。文件内容如下：&lt;/p&gt;
+&lt;pre class=&quot; language-js&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mongo基本命令</title>
+    <link href="https://gitthink.github.io/categories/database/1ad5be0d.html"/>
+    <id>https://gitthink.github.io/categories/database/1ad5be0d.html</id>
+    <published>2019-04-25T02:35:36.000Z</published>
+    <updated>2020-07-14T03:19:05.597Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;先来一个常用的赋值和输出命令，熟悉一下。&lt;/p&gt;
+&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;var x&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>认识和安装MongoDB</title>
+    <link href="https://gitthink.github.io/categories/database/83dcefb7.html"/>
+    <id>https://gitthink.github.io/categories/database/83dcefb7.html</id>
+    <published>2019-04-25T02:35:36.000Z</published>
+    <updated>2020-07-14T03:13:26.333Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;都知道MongoDB是非关系型数据库，要了解非关系型数据库就必须先了解关系型数据库，关系数据库，是建立在关系模型基础上的数据库。比较有名气的关系型数据库，比如Oracle、DB2、MSSQL、Mysql。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://gitthink.github.io/categories/database/"/>
+    
+    
+      <category term="MongoDB" scheme="https://gitthink.github.io/tags/mongodb/"/>
+    
+  </entry>
+  
+</feed>
