@@ -1930,8 +1930,8 @@ footer .copy-right {
 
 @media screen and (max-width: 560px) {
 	.top-scroll {
-		right: 17px;
-		bottom: 82px;
+	    right: 17px;
+	    bottom: 82px;
 	}
 }
 
