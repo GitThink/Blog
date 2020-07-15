@@ -1928,6 +1928,13 @@ footer .copy-right {
     z-index: 998;
 }
 
+@media screen and (max-width: 560px) {
+	.top-scroll {
+		right: 17px;
+		bottom: 82px;
+	}
+}
+
 .top-scroll .btn-floating {
     background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
     width: 48px;
