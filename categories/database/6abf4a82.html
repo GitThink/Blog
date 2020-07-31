@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2019-05-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    641
+                    733
                 </div>
                 
 
@@ -416,29 +416,29 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="push追加数组-内嵌文档值"><a href="#push追加数组-内嵌文档值" class="headerlink" title="$push追加数组/内嵌文档值"></a>$push追加数组/内嵌文档值</h2><p>$push的功能是追加数组中的值，但我们也经常用它操作内嵌稳文档，就是{}对象型的值。先看一个追加数组值的方式，比如我们要给张三加上一个爱好(interset)为画画（draw）：</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">'zhangsan'</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$push</span>:<span class="token punctuation">{</span>interest:<span class="token string">'draw'</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:'zhangsan'&amp;#125;,&amp;#123;$push:&amp;#123;interest:'draw'&amp;#125;&amp;#125;)</span></code></pre>
 <p>当然$push修饰符还可以为内嵌文档增加值，比如我们现在要给我们的UI，增加一项新的技能skillFour为draw，这时候我们可以操作为：</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">'jspan'</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$push</span>:<span class="token punctuation">{</span><span class="token string">"skill.skillFour"</span><span class="token keyword">:</span><span class="token string">'draw'</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:'jspan'&amp;#125;,&amp;#123;$push:&amp;#123;"skill.skillFour":'draw'&amp;#125;&amp;#125;)</span></code></pre>
 <p>$push修饰符在工作中是最常用的，因为我们的数据一般都会涉及数组和内嵌文档的操作。</p>
 <h2 id="ne查找是否存在"><a href="#ne查找是否存在" class="headerlink" title="$ne查找是否存在"></a>$ne查找是否存在</h2><p>它主要的作用是，检查一个值是否存在，如果不存在再执行操作，存在就不执行。<br>例子：如果zhangsan的爱好（interest）里没有palyGame这个值，我们就加入Game这个爱好。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">'zhangsan'</span>,<span class="token string">"interest"</span>:<span class="token punctuation">{</span><span class="token variable">$ne</span><span class="token keyword">:</span><span class="token string">'playGame'</span><span class="token punctuation">}</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$push</span>:<span class="token punctuation">{</span>interest:<span class="token string">'Game'</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:'zhangsan',"interest":&amp;#123;$ne:'playGame'&amp;#125;&amp;#125;,&amp;#123;$push:&amp;#123;interest:'Game'&amp;#125;&amp;#125;)</span></code></pre>
 <blockquote>
 <p>总结：没有则修改，有则不修改。</p>
 </blockquote>
 <h2 id="addToSet-升级版的-ne"><a href="#addToSet-升级版的-ne" class="headerlink" title="$addToSet 升级版的$ne"></a>$addToSet 升级版的$ne</h2><p>它是$ne的升级版本（查找是否存在，不存在就push上去），操作起来更直观和方便，所以再工作中这个要比$en用的多。<br>例子：我们现在要查看张三(zhangsan)兴趣(interest)中有没有阅读（readBook）这项，没有则加入读书(readBook)的兴趣.</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">"zhangsan"</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$addToSet</span>:<span class="token punctuation">{</span>interest:<span class="token string">"readBook"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"zhangsan"&amp;#125;,&amp;#123;$addToSet:&amp;#123;interest:"readBook"&amp;#125;&amp;#125;)</span></code></pre>
 <h2 id="each-批量追加"><a href="#each-批量追加" class="headerlink" title="$each 批量追加"></a>$each 批量追加</h2><p>它可以传入一个数组，一次增加多个值进去，相当于批量操作，性能同样比循环操作要好很多，这个是需要我们注意的，工作中也要先组合成数组，然后用批量的形式进行操作。<br>例子：我们现在要给zhangsan,一次加入三个爱好，唱歌（Sing），跳舞（Dance），编码（Code）。</p>
 <pre class=" language-bash"><code class="language-bash">var newInterset<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"Sing"</span>,<span class="token string">"Dance"</span>,<span class="token string">"Code"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">"zhangsan"</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$addToSet</span>:<span class="token punctuation">{</span>interest:<span class="token punctuation">{</span><span class="token variable">$each</span>:newInterset<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+db.workmate.update<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"zhangsan"&amp;#125;,&amp;#123;$addToSet:&amp;#123;interest:&amp;#123;$each:newInterset&amp;#125;&amp;#125;&amp;#125;)</span></code></pre>
 <h2 id="pop-删除数组值"><a href="#pop-删除数组值" class="headerlink" title="$pop 删除数组值"></a>$pop 删除数组值</h2><p>$pop只删除一次，并不是删除所有数组中的值。而且它有两个选项，一个是1和-1。</p>
 <ul>
 <li>1：从数组末端进行删除</li>
 <li>-1：从数组开端进行删除</li>
 </ul>
 <p>例子：现在要删除zhangsan的编码爱好（code）。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">'zhangsan'</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$pop</span>:<span class="token punctuation">{</span>interest:1<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:'zhangsan'&amp;#125;,&amp;#123;$pop:&amp;#123;interest:1&amp;#125;&amp;#125;)</span></code></pre>
 <h2 id="数组定位修改"><a href="#数组定位修改" class="headerlink" title="数组定位修改"></a>数组定位修改</h2><p>有时候只知道修改数组的第几位，但并不知道是什么，这时候我们可以使用interest.int 的形式。<br>例子，比如我们现在要修改zhangsan的第三个兴趣为编码（Code），注意这里的计数是从0开始的。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">'zhangsan'</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$set</span>:<span class="token punctuation">{</span><span class="token string">"interest.2"</span><span class="token keyword">:</span><span class="token string">"Code"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:'zhangsan'&amp;#125;,&amp;#123;$set:&amp;#123;"interest.2":"Code"&amp;#125;&amp;#125;)</span></code></pre>
 
             </div>
             <hr/>
@@ -464,7 +464,7 @@ db.workmate.update<span class="token punctuation">(</span><span class="token pun
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitthink.github.io/categories/database/6abf4a82.html">https://gitthink.github.io/categories/database/6abf4a82.html</a>
+                    <a href="https://gitthink.gitee.io/categories/database/6abf4a82.html">https://gitthink.gitee.io/categories/database/6abf4a82.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -964,7 +964,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.7k</span>&nbsp;字
+                class="white-color">20.8k</span>&nbsp;字
             
             
             

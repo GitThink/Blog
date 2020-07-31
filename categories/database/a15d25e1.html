@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2019-05-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    581
+                    753
                 </div>
                 
 
@@ -418,61 +418,61 @@
                 <p>很多时候我们需要查询的值不只是有一个简单的条件，比如我们现在要查询一下同事中是20岁和26岁的，还比如我们要查询同事中大于25岁并且会PhotoShop技能的。MongoDB在这方面也支持的很好。</p>
 <h2 id="in修饰符"><a href="#in修饰符" class="headerlink" title="$in修饰符"></a>$in修饰符</h2><p>$in修饰符可以轻松解决一键多值的查询情况。就如上面我们讲的例子，现在要查询同事中年龄是20岁和26岁的信息。</p>
 <pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span>
-    <span class="token punctuation">{</span>age:<span class="token punctuation">{</span><span class="token variable">$in</span>:<span class="token punctuation">[</span>20,26<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">}</span>,
-    <span class="token punctuation">{</span>name:1,<span class="token string">"skill.skillOne"</span>:1,age:1,_id:0<span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;age:&amp;#123;$in:[20,26]&amp;#125;&amp;#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:1,"skill.skillOne":1,age:1,_id:0&amp;#125;</span>
 <span class="token punctuation">)</span></code></pre>
 <p>结果为：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"panda"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 20, <span class="token string">"skill"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span> <span class="token string">"skillOne"</span> <span class="token keyword">:</span> <span class="token string">"HTML+CSS"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
-<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"xiaowang"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 26, <span class="token string">"skill"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span> <span class="token string">"skillOne"</span> <span class="token keyword">:</span> <span class="token string">"PhotoShop"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "panda", "age" : 20, "skill" : &amp;#123; "skillOne" : "HTML+CSS" &amp;#125; &amp;#125;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "xiaowang", "age" : 26, "skill" : &amp;#123; "skillOne" : "PhotoShop" &amp;#125; &amp;#125;</span></code></pre>
 <p>与$in相对的修饰符是$nin，就是查询除了$in条件以外的值。</p>
 <pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span>
-    <span class="token punctuation">{</span>age:<span class="token punctuation">{</span><span class="token variable">$nin</span>:<span class="token punctuation">[</span>20,26<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">}</span>,
-    <span class="token punctuation">{</span>name:1,<span class="token string">"skill.skillOne"</span>:1,age:1,_id:0<span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;age:&amp;#123;$nin:[20,26]&amp;#125;&amp;#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:1,"skill.skillOne":1,age:1,_id:0&amp;#125;</span>
 <span class="token punctuation">)</span></code></pre>
 <p>结果为：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"panpan"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 24, <span class="token string">"skill"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span> <span class="token string">"skillOne"</span> <span class="token keyword">:</span> <span class="token string">"HTML+CSS"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "panpan", "age" : 24, "skill" : &amp;#123; "skillOne" : "HTML+CSS" &amp;#125; &amp;#125;</span></code></pre>
 <h2 id="or修饰符"><a href="#or修饰符" class="headerlink" title="$or修饰符"></a>$or修饰符</h2><p>它用来查询多个键值的情况，就比如查询同事中大于25岁或者会HTML+CSS的信息。主要区别是两个Key值。$in修饰符是一个Key值，这个需要去比较记忆。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token variable">$or</span>:<span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>age:<span class="token punctuation">{</span><span class="token variable">$gte</span>:25<span class="token punctuation">}</span><span class="token punctuation">}</span>,
-    <span class="token punctuation">{</span><span class="token string">"skill.skillOne"</span><span class="token keyword">:</span><span class="token string">'HTML+CSS'</span><span class="token punctuation">}</span>
-<span class="token punctuation">]</span><span class="token punctuation">}</span>,
-    <span class="token punctuation">{</span>name:1,<span class="token string">"skill.skillOne"</span>:1,age:1,_id:0<span class="token punctuation">}</span>
+<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;$or:[</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;age:&amp;#123;$gte:25&amp;#125;&amp;#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"skill.skillOne":'HTML+CSS'&amp;#125;</span>
+<span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:1,"skill.skillOne":1,age:1,_id:0&amp;#125;</span>
 <span class="token punctuation">)</span></code></pre>
 <p>结果为：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"panpan"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 24, <span class="token string">"skill"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span> <span class="token string">"skillOne"</span> <span class="token keyword">:</span> <span class="token string">"HTML+CSS"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
-<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"panda"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 20, <span class="token string">"skill"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span> <span class="token string">"skillOne"</span> <span class="token keyword">:</span> <span class="token string">"HTML+CSS"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
-<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"xiaowang"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 26, <span class="token string">"skill"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span> <span class="token string">"skillOne"</span> <span class="token keyword">:</span> <span class="token string">"PhotoShop"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "panpan", "age" : 24, "skill" : &amp;#123; "skillOne" : "HTML+CSS" &amp;#125; &amp;#125;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "panda", "age" : 20, "skill" : &amp;#123; "skillOne" : "HTML+CSS" &amp;#125; &amp;#125;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "xiaowang", "age" : 26, "skill" : &amp;#123; "skillOne" : "PhotoShop" &amp;#125; &amp;#125;</span></code></pre>
 <p>与$or相对的修饰符是$nor，就是查询除了$or条件以外的值。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token variable">$nor</span>:<span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>age:<span class="token punctuation">{</span><span class="token variable">$gte</span>:25<span class="token punctuation">}</span><span class="token punctuation">}</span>,
-    <span class="token punctuation">{</span><span class="token string">"skill.skillOne"</span><span class="token keyword">:</span><span class="token string">'HTML+CSS'</span><span class="token punctuation">}</span>
-<span class="token punctuation">]</span><span class="token punctuation">}</span>,
-    <span class="token punctuation">{</span>name:1,<span class="token string">"skill.skillOne"</span>:1,age:1,_id:0<span class="token punctuation">}</span>
+<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;$nor:[</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;age:&amp;#123;$gte:25&amp;#125;&amp;#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"skill.skillOne":'HTML+CSS'&amp;#125;</span>
+<span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:1,"skill.skillOne":1,age:1,_id:0&amp;#125;</span>
 <span class="token punctuation">)</span></code></pre>
 <p>结果为：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"jspan"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 20, <span class="token string">"skill"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span> <span class="token string">"skillOne"</span> <span class="token keyword">:</span> <span class="token string">"PhotoShop"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "jspan", "age" : 20, "skill" : &amp;#123; "skillOne" : "PhotoShop" &amp;#125; &amp;#125;</span></code></pre>
 <h2 id="and修饰符"><a href="#and修饰符" class="headerlink" title="$and修饰符"></a>$and修饰符</h2><p>$and用来查找几个key值都满足的情况，比如要查询同事中大于25岁并且会PhotoShop的信息，这时需要注意的是这两项必须全部满足。当然写法还是比较简单的。只要把上面代码中的$or换成$and就可以了。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token variable">$and</span>:<span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>age:<span class="token punctuation">{</span><span class="token variable">$gte</span>:25<span class="token punctuation">}</span><span class="token punctuation">}</span>,
-    <span class="token punctuation">{</span><span class="token string">"skill.skillOne"</span><span class="token keyword">:</span><span class="token string">'HTML+CSS'</span><span class="token punctuation">}</span>
-<span class="token punctuation">]</span><span class="token punctuation">}</span>,
-    <span class="token punctuation">{</span>name:1,<span class="token string">"skill.skillOne"</span>:1,age:1,_id:0<span class="token punctuation">}</span>
+<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;$and:[</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;age:&amp;#123;$gte:25&amp;#125;&amp;#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"skill.skillOne":'HTML+CSS'&amp;#125;</span>
+<span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:1,"skill.skillOne":1,age:1,_id:0&amp;#125;</span>
 <span class="token punctuation">)</span></code></pre>
 <p>结果为：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"xiaowang"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 26, <span class="token string">"skill"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span> <span class="token string">"skillOne"</span> <span class="token keyword">:</span> <span class="token string">"PhotoShop"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "xiaowang", "age" : 26, "skill" : &amp;#123; "skillOne" : "PhotoShop" &amp;#125; &amp;#125;</span></code></pre>
 <h2 id="not修饰符"><a href="#not修饰符" class="headerlink" title="$not修饰符"></a>$not修饰符</h2><p>它用来查询除条件之外的值，比如我们现在要查找除年龄大于18岁，小于25岁的人员信息。需要注意的是$not修饰符不能应用在条件语句中，只能在外边进行查询使用。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token punctuation">{</span>
-    age:<span class="token punctuation">{</span>
-        <span class="token variable">$not</span>:<span class="token punctuation">{</span>
+<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    age:<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        <span class="token variable">$not</span><span class="token keyword">:</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
             <span class="token variable">$lte</span>:25,
             <span class="token variable">$gte</span>:18
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>,
-<span class="token punctuation">{</span>name:1,<span class="token string">"skill.skillOne"</span>:1,age:1,_id:0<span class="token punctuation">}</span>
+        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:1,"skill.skillOne":1,age:1,_id:0&amp;#125;</span>
 <span class="token punctuation">)</span></code></pre>
 <p>结果为：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"xiaowang"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 26, <span class="token string">"skill"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span> <span class="token string">"skillOne"</span> <span class="token keyword">:</span> <span class="token string">"PhotoShop"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "xiaowang", "age" : 26, "skill" : &amp;#123; "skillOne" : "PhotoShop" &amp;#125; &amp;#125;</span></code></pre>
 
             </div>
             <hr/>
@@ -498,7 +498,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitthink.github.io/categories/database/a15d25e1.html">https://gitthink.github.io/categories/database/a15d25e1.html</a>
+                    <a href="https://gitthink.gitee.io/categories/database/a15d25e1.html">https://gitthink.gitee.io/categories/database/a15d25e1.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -998,7 +998,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.7k</span>&nbsp;字
+                class="white-color">20.8k</span>&nbsp;字
             
             
             

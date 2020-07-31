@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2019-05-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    404
+                    448
                 </div>
                 
 
@@ -416,23 +416,23 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>这节我们先建立一个集合（collections）-info，然后插入一小段文章，作用就是为建立全文索引提供数据，当然我们不再建立百万级数据，我们只是看一下效果。</p>
-<pre class=" language-bash"><code class="language-bash">db.info.insert<span class="token punctuation">(</span><span class="token punctuation">{</span>contextInfo:<span class="token string">"I am a programmer, I love life, love family. Every day after work, I write a diary."</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-db.info.insert<span class="token punctuation">(</span><span class="token punctuation">{</span>contextInfo:<span class="token string">"I am a programmer, I love PlayGame, love drink. Every day after work, I playGame and drink."</span><span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.info.insert<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;contextInfo:"I am a programmer, I love life, love family. Every day after work, I write a diary."&amp;#125;)</span>
+db.info.insert<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;contextInfo:"I am a programmer, I love PlayGame, love drink. Every day after work, I playGame and drink."&amp;#125;</span></code></pre>
 <p>当然这很简单，再次强调这只是文章需要，实际工作中这么简单的数据没必要建立全文索引。</p>
-<h2 id="建立全文索引"><a href="#建立全文索引" class="headerlink" title="建立全文索引"></a>建立全文索引</h2><pre class=" language-bash"><code class="language-bash">db.info.ensureIndex<span class="token punctuation">(</span><span class="token punctuation">{</span>contextInfo:<span class="token string">'text'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<h2 id="建立全文索引"><a href="#建立全文索引" class="headerlink" title="建立全文索引"></a>建立全文索引</h2><pre class=" language-bash"><code class="language-bash">db.info.ensureIndex<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;contextInfo:'text'&amp;#125;)</span></code></pre>
 <p>需要注意的是这里使用text关键词来代表全文索引，我们在这里就不建立数据模型了。</p>
 <h2 id="全文索引查找"><a href="#全文索引查找" class="headerlink" title="全文索引查找"></a>全文索引查找</h2><p>建立好了全文索引就可以查找了，查找时需要两个关键修饰符:</p>
 <ul>
 <li>$text:表示要在全文索引中查东西。</li>
 <li>$search:后边跟查找的内容。</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash">db.info.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token variable">$text</span>:<span class="token punctuation">{</span><span class="token variable">$search</span><span class="token keyword">:</span><span class="token string">"programmer"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.info.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;$text:&amp;#123;$search:"programmer"&amp;#125;&amp;#125;)</span></code></pre>
 <h2 id="查找多个词"><a href="#查找多个词" class="headerlink" title="查找多个词"></a>查找多个词</h2><p>全文索引是支持多个次查找的，比如我们希望查找数据中有programmer，family，diary，drink的数据（这是或的关系），所以两条数据都会出现。</p>
-<pre class=" language-bash"><code class="language-bash">db.info.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token variable">$text</span>:<span class="token punctuation">{</span><span class="token variable">$search</span><span class="token keyword">:</span><span class="token string">"programmer family diary drink"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.info.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;$text:&amp;#123;$search:"programmer family diary drink"&amp;#125;&amp;#125;)</span></code></pre>
 <p>如果我们这时候希望不查找出来有drink这个单词的记录，我们可以使用“-”减号来取消。</p>
-<pre class=" language-bash"><code class="language-bash">db.info.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token variable">$text</span>:<span class="token punctuation">{</span><span class="token variable">$search</span><span class="token keyword">:</span><span class="token string">"programmer family diary -drink"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.info.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;$text:&amp;#123;$search:"programmer family diary -drink"&amp;#125;&amp;#125;)</span></code></pre>
 <h2 id="转义符"><a href="#转义符" class="headerlink" title="转义符"></a>转义符</h2><p>全文搜索中是支持转义符的，比如我们想搜索的是两个词（love PlayGame和drink），这时候需要使用\斜杠来转意。</p>
-<pre class=" language-bash"><code class="language-bash">db.info.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token variable">$text</span>:<span class="token punctuation">{</span><span class="token variable">$search</span><span class="token keyword">:</span><span class="token string">"\"love PlayGame\" drink"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.info.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;$text:&amp;#123;$search:"\"love PlayGame\" drink"&amp;#125;&amp;#125;)</span></code></pre>
 
             </div>
             <hr/>
@@ -458,7 +458,7 @@ db.info.insert<span class="token punctuation">(</span><span class="token punctua
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitthink.github.io/categories/database/3f39b042.html">https://gitthink.github.io/categories/database/3f39b042.html</a>
+                    <a href="https://gitthink.gitee.io/categories/database/3f39b042.html">https://gitthink.gitee.io/categories/database/3f39b042.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -958,7 +958,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.7k</span>&nbsp;字
+                class="white-color">20.8k</span>&nbsp;字
             
             
             

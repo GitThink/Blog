@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2019-04-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.6k
                 </div>
                 
 
@@ -417,14 +417,14 @@
             <div id="articleContent">
                 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>&emsp;&emsp;采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。<br>&emsp;&emsp;容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。<br>&emsp;&emsp;Flex项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。<br>&emsp;&emsp;Flex属性分为两部分，一部分作用于容器称容器属性，另一部分作用于项目称为项目属性。下面我们就分部的来介绍它们。</p>
 <h2 id="Flex容器属性"><a href="#Flex容器属性" class="headerlink" title="Flex容器属性"></a>Flex容器属性</h2><h3 id="flex容器定义"><a href="#flex容器定义" class="headerlink" title="flex容器定义"></a>flex容器定义</h3><p>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>box &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
   <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 或者 inline-flex */</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <p>&emsp;&emsp;上述写法，定义了一个flex容器，根据设值的不同可以是块状容器或内联容器。这使得直接子结点拥有了一个flex上下文。</p>
 <h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>&emsp;&emsp;<code>flex-direction</code> 属性决定主轴的方向（即项目的排列方向）。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>box &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
     <span class="token property">flex-direction</span><span class="token punctuation">:</span> row | row-reverse | column | column-reverse<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li><code>row</code> 表示从左向右排列</li>
 <li><code>row-reverse</code> 表示从右向左排列</li>
@@ -432,22 +432,22 @@
 <li><code>column-reverse</code> 表示从下向上排列</li>
 </ul>
 <h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>&emsp;&emsp;缺省情况下，Flex项目都排在一条线（又称”轴线”）上。我们可以通过 <code>flex-wrap</code> 属性的设置，让Flex项目换行排列。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>box &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
     <span class="token property">flex-wrap</span><span class="token punctuation">:</span> nowrap | wrap | wrap-reverse<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li><code>nowrap</code> (缺省)：所有Flex项目单行排列</li>
 <li><code>wrap</code> ：所有Flex项目多行排列，按从上到下的顺序</li>
 <li><code>wrap-reverse</code> ：所有Flex项目多行排列，按从下到上的顺序</li>
 </ul>
 <h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>&emsp;&emsp;<code>flex-flow</code> 属性是 <code>flex-direction</code> 属性和 <code>flex-wrap</code> 属性的简写形式，默认值为 <code>row nowrap</code><br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>box &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
     <span class="token property">flex-flow</span><span class="token punctuation">:</span> &lt;‘flex-direction’> || &lt;‘flex-wrap’>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>&emsp;&emsp;<code>justify-content</code> 属性定义了项目在主轴上的对齐方式及额外空间的分配方式。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span>  </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>box  &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
     <span class="token property">justify-content</span><span class="token punctuation">:</span> flex-start | flex-end | center | space-between | space-around | space-evenly<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li><code>flex-start</code> (缺省)：从启点线开始顺序排列</li>
 <li><code>flex-end</code> ：相对终点线顺序排列</li>
@@ -457,9 +457,9 @@
 <li><code>space-evenly</code> ：项目均匀分布，所有项目之间及项目与边框之间距离相等</li>
 </ul>
 <h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>&emsp;&emsp;<code>align-items</code> 属性定义项目在交叉轴上的对齐方式。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>box &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
   <span class="token property">align-items</span><span class="token punctuation">:</span> stretch | flex-start | flex-end | center | baseline<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li><code>stretch</code> (缺省)：交叉轴方向拉伸显示</li>
 <li><code>flex-start</code> ：项目按交叉轴起点线对齐</li>
@@ -468,9 +468,9 @@
 <li><code>baseline</code> ：交叉轴方向按第一行文字基线对齐</li>
 </ul>
 <h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><p>&emsp;&emsp;<code>align-content</code> 属性定义了在交叉轴方向的对齐方式及额外空间分配，类似于主轴上 <code>justify-content</code> 的作用。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>box &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
     <span class="token property">align-content</span><span class="token punctuation">:</span> stretch | flex-start | flex-end | center | space-between | space-around <span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li><code>stretch</code>  (缺省)：拉伸显示</li>
 <li><code>flex-start</code> ：从启点线开始顺序排列</li>
@@ -480,31 +480,31 @@
 <li><code>space-around</code> ：项目均匀分布，每一个项目两侧有相同的留白空间，相邻项目之间的距离是两个项目之间留白的和</li>
 </ul>
 <h2 id="Flex项目属性"><a href="#Flex项目属性" class="headerlink" title="Flex项目属性"></a>Flex项目属性</h2><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>&emsp;&emsp;缺省情况下，Flex项目是按照在代码中出现的先后顺序排列的。然而 <code>order</code> 属性可以控制项目在容器中的先后顺序。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.item</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>item &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
   <span class="token property">order</span><span class="token punctuation">:</span> &lt;integer><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 缺省 0 */</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <p>&emsp;&emsp;按 <code>order</code> 值从小到大顺序排列，可以为负值，缺省为0。</p>
 <h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>&emsp;&emsp;<code>flex-grow</code> 属性定义项目的放大比例，<code>flex-grow</code> 值是一个单位的正整数，表示放大的比例。默认为0，即如果存在额外空间，也不放大，负值无效。<br>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.item</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>item &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
   <span class="token property">flex-grow</span><span class="token punctuation">:</span> &lt;number><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 缺省 0 */</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h3><p>&emsp;&emsp;<code>flex-shrink</code> 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。0表示不缩小，负值无效。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.item</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>item &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
   <span class="token property">flex-shrink</span><span class="token punctuation">:</span> &lt;number><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 缺省 1 */</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p>&emsp;&emsp;<code>flex-basis</code> 属性定义项目在分配额外空间之前的缺省尺寸。属性值可以是长度（20%，10rem等）或者关键字auto。它的默认值为 <code>auto</code> ，即项目的本来大小。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.item</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>item &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
   <span class="token property">flex-basis</span><span class="token punctuation">:</span> &lt;length> | auto<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 缺省 auto */</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>&emsp;&emsp;<code>flex</code> 属性是 <code>flex-grow</code> , <code>flex-shrink</code> 和 <code>flex-basis</code> 的简写，默认值为0 1 auto。后两个是可选属性。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.item</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>item &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
   <span class="token property">flex</span><span class="token punctuation">:</span> none | [ &lt;<span class="token string">'flex-grow'</span>> &lt;<span class="token string">'flex-shrink'</span>>? || &lt;<span class="token string">'flex-basis'</span>> ]
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <p>&emsp;&emsp;一般推荐使用这种简写的方式，而不是分别定义每一个属性。</p>
 <h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>&emsp;&emsp;<code>align-self</code> 属性定义项目的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br>基本语法：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.item</span> </span><span class="token punctuation">{</span>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>item &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
   <span class="token property">align-self</span><span class="token punctuation">:</span> auto | flex-start | flex-end | center | baseline | stretch<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
 <p>&emsp;&emsp;除了 <code>auto</code> 值以外，<code>align-self</code> 属性与容器的 <code>align-items</code> 属性基本一致。</p>
 <h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><table>
 <thead>
@@ -554,7 +554,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitthink.github.io/categories/frontend/1ad5be0d.html">https://gitthink.github.io/categories/frontend/1ad5be0d.html</a>
+                    <a href="https://gitthink.gitee.io/categories/frontend/1ad5be0d.html">https://gitthink.gitee.io/categories/frontend/1ad5be0d.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1055,7 +1055,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.7k</span>&nbsp;字
+                class="white-color">20.8k</span>&nbsp;字
             
             
             

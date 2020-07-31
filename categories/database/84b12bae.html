@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-28
+                    2019-04-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    490
+                    526
                 </div>
                 
 
@@ -417,44 +417,44 @@
             <div id="articleContent">
                 <h2 id="错误：只update修改项"><a href="#错误：只update修改项" class="headerlink" title="错误：只update修改项"></a>错误：只update修改项</h2><p>如果你有过关系型数据库的经验，你会很容易犯只修改需要改变的一项，因为在关系型数据库中就是这样作的。先来准备一些数据。</p>
 <pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/* demo01.js */</span>
-<span class="token keyword">var</span> workmate1<span class="token operator">=</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> workmate1<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     name<span class="token punctuation">:</span><span class="token string">'panpan'</span><span class="token punctuation">,</span>
     age<span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">,</span>
     sex<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
     job<span class="token punctuation">:</span><span class="token string">'前端'</span><span class="token punctuation">,</span>
-    skill<span class="token punctuation">:</span><span class="token punctuation">{</span>
+    skill<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         skillOne<span class="token punctuation">:</span><span class="token string">'HTML+CSS'</span><span class="token punctuation">,</span>
         SkillTwo<span class="token punctuation">:</span><span class="token string">'JavaScript'</span><span class="token punctuation">,</span>
         SkillThree<span class="token punctuation">:</span><span class="token string">'PHP'</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
     regeditTime<span class="token punctuation">:</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
-<span class="token keyword">var</span> workmate2<span class="token operator">=</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> workmate2<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     name<span class="token punctuation">:</span><span class="token string">'panda'</span><span class="token punctuation">,</span>
     age<span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">,</span>
     sex<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
     job<span class="token punctuation">:</span><span class="token string">'JAVA后端'</span><span class="token punctuation">,</span>
-    skill<span class="token punctuation">:</span><span class="token punctuation">{</span>
+    skill<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         skillOne<span class="token punctuation">:</span><span class="token string">'HTML+CSS'</span><span class="token punctuation">,</span>
         SkillTwo<span class="token punctuation">:</span><span class="token string">'J2EE'</span><span class="token punctuation">,</span>
         SkillThree<span class="token punctuation">:</span><span class="token string">'PPT'</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
     regeditTime<span class="token punctuation">:</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
-<span class="token keyword">var</span> workmate3<span class="token operator">=</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> workmate3<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     name<span class="token punctuation">:</span><span class="token string">'jspan'</span><span class="token punctuation">,</span>
     age<span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">,</span>
     sex<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
     job<span class="token punctuation">:</span><span class="token string">'UI设计'</span><span class="token punctuation">,</span>
-    skill<span class="token punctuation">:</span><span class="token punctuation">{</span>
+    skill<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         skillOne<span class="token punctuation">:</span><span class="token string">'PhotoShop'</span><span class="token punctuation">,</span>
         SkillTwo<span class="token punctuation">:</span><span class="token string">'UI'</span><span class="token punctuation">,</span>
         SkillThree<span class="token punctuation">:</span><span class="token string">'Word+Excel+PPT'</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
     regeditTime<span class="token punctuation">:</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token keyword">var</span> db<span class="token operator">=</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">'company'</span><span class="token punctuation">)</span>
 <span class="token keyword">var</span> workmateArray<span class="token operator">=</span><span class="token punctuation">[</span>workmate1<span class="token punctuation">,</span>workmate2<span class="token punctuation">,</span>workmate3<span class="token punctuation">]</span>
@@ -464,19 +464,19 @@ db<span class="token punctuation">.</span>workmate<span class="token punctuation
 <h2 id="正确修改方法"><a href="#正确修改方法" class="headerlink" title="正确修改方法"></a>正确修改方法</h2><p>可以声明一个变量，然后把要改变数据的全部信息放入变量，最后执行修改操作。</p>
 <pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/* demo02.js */</span>
 <span class="token keyword">var</span> db<span class="token operator">=</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">'company'</span><span class="token punctuation">)</span>
-<span class="token keyword">var</span> workmate3<span class="token operator">=</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> workmate3<span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     name<span class="token punctuation">:</span><span class="token string">'jspan'</span><span class="token punctuation">,</span>
     age<span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">,</span>
     sex<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span>
     job<span class="token punctuation">:</span><span class="token string">'UI设计'</span><span class="token punctuation">,</span>
-    skill<span class="token punctuation">:</span><span class="token punctuation">{</span>
+    skill<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         skillOne<span class="token punctuation">:</span><span class="token string">'PhotoShop'</span><span class="token punctuation">,</span>
         SkillTwo<span class="token punctuation">:</span><span class="token string">'UI'</span><span class="token punctuation">,</span>
         SkillThree<span class="token punctuation">:</span><span class="token string">'Word+Excel+PPT'</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
     regeditTime<span class="token punctuation">:</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-db<span class="token punctuation">.</span>workmate<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span><span class="token string">'jspan'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>workmate3<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+db<span class="token punctuation">.</span>workmate<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token punctuation">:</span><span class="token string">'jspan'</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>workmate3<span class="token punctuation">)</span>
 <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'[update]: The data was updated successfully'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>这时候你需要删除（db.workmate.drop()）表中的数据，因为jspan这个用户已经不在数据库中了，然后重新使用load方法载入插入数据再进行修改。<br><strong>执行命令如下:</strong></p>
 <pre class=" language-js"><code class="language-js">db<span class="token punctuation">.</span>workmate<span class="token punctuation">.</span><span class="token function">drop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -508,7 +508,7 @@ db<span class="token punctuation">.</span>workmate<span class="token punctuation
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitthink.github.io/categories/database/84b12bae.html">https://gitthink.github.io/categories/database/84b12bae.html</a>
+                    <a href="https://gitthink.gitee.io/categories/database/84b12bae.html">https://gitthink.gitee.io/categories/database/84b12bae.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1008,7 +1008,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.7k</span>&nbsp;字
+                class="white-color">20.8k</span>&nbsp;字
             
             
             

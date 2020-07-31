@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2019-05-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    707
+                    747
                 </div>
                 
 
@@ -417,11 +417,11 @@
             <div id="articleContent">
                 <h2 id="应答式写入"><a href="#应答式写入" class="headerlink" title="应答式写入"></a>应答式写入</h2><p>在动手学习代码之前，我们先来了解一个概念：应答式写入。在以前的文章中，我们的操作都是非应答式写入，就是在操作完数据库后，它并没有给我们任何的回应和返回值，而是我们自己安慰自己写了一句话（print(‘[update]:The data was updated successfully’);）。这在工作中是不允许的，因为根本不能体现我们修改的结果。<br>应答式写入就会给我们直接返回结果（报表），结果里边的包含项会很多，这样我们就可以很好的进行程序的控制和安全机制的处理。有点像前端调用后端接口，无论作什么，后端都要给我一些状态字一样。</p>
 <h2 id="db-runCommand"><a href="#db-runCommand" class="headerlink" title="db.runCommand( )"></a>db.runCommand( )</h2><p>它是数据库运行命令的执行器，执行命令首选就要使用它，因为它在Shell和驱动程序间提供了一致的接口。（几乎操作数据库的所有操作，都可以使用runCommand来执行）现在我们试着用runCommand来修改数据库，看看结果和直接用db.collections.update有什么不同。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span>sex:1<span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$set</span>:<span class="token punctuation">{</span>money:1000<span class="token punctuation">}</span><span class="token punctuation">}</span>,false,true<span class="token punctuation">)</span>
-var resultMessage<span class="token operator">=</span>db.runCommand<span class="token punctuation">(</span><span class="token punctuation">{</span>getLastError:1<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;sex:1&amp;#125;,&amp;#123;$set:&amp;#123;money:1000&amp;#125;&amp;#125;,false,true)</span>
+var resultMessage<span class="token operator">=</span>db.runCommand<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;getLastError:1&amp;#125;)</span>
 printjson<span class="token punctuation">(</span>resultMessage<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>上边的代码，我们修改了所有男士的数据，每个人增加了1000元钱(money)，然后用db.runCommand()执行，可以看到执行结果在控制台返回了。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
     <span class="token string">"connectionId"</span> <span class="token keyword">:</span> 1,
     <span class="token string">"updatedExisting"</span> <span class="token keyword">:</span> true,
     <span class="token string">"n"</span> <span class="token keyword">:</span> 2,
@@ -429,7 +429,7 @@ printjson<span class="token punctuation">(</span>resultMessage<span class="token
     <span class="token string">"writtenTo"</span> <span class="token keyword">:</span> null,
     <span class="token string">"err"</span> <span class="token keyword">:</span> null,
     <span class="token string">"ok"</span> <span class="token keyword">:</span> 1
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span></code></pre>
 <ul>
 <li>false: 第一句末尾的false是upsert的简写，代表没有此条数据时不增加</li>
 <li>true: true是multi的简写，代表修改所有</li>
@@ -437,15 +437,15 @@ printjson<span class="token punctuation">(</span>resultMessage<span class="token
 <li>printjson: 表示以json对象的格式输出到控制台</li>
 </ul>
 <p>db.listCommands( ):查看所有的Commad命令。<br>比如我们要查看是否和数据库链接成功了，就可以使用Command命令。</p>
-<pre class=" language-bash"><code class="language-bash">db.runCommand<span class="token punctuation">(</span><span class="token punctuation">{</span>ping:1<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.runCommand<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;ping:1&amp;#125;)</span></code></pre>
 <p>返回ok：1就代表链接正常。</p>
 <h2 id="findAndModify"><a href="#findAndModify" class="headerlink" title="findAndModify"></a>findAndModify</h2><p>从名字上就可以看出，findAndModify是查找并修改的意思。配置它可以在修改后给我们返回修改的结果。我们先看下面的代码：</p>
-<pre class=" language-bash"><code class="language-bash">var myModify<span class="token operator">=</span><span class="token punctuation">{</span>
+<pre class=" language-bash"><code class="language-bash">var myModify<span class="token operator">=</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
     findAndModify:<span class="token string">"workmate"</span>,
-    query:<span class="token punctuation">{</span>name:<span class="token string">'jspan'</span><span class="token punctuation">}</span>,
-    update:<span class="token punctuation">{</span><span class="token variable">$set</span>:<span class="token punctuation">{</span>age:18<span class="token punctuation">}</span><span class="token punctuation">}</span>,
+    query:<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:'jspan'&amp;#125;,</span>
+    update:<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;$set:&amp;#123;age:18&amp;#125;&amp;#125;,</span>
     new:true    //更新完成，需要查看结果，如果为false不进行查看结果
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 var ResultMessage<span class="token operator">=</span>db.runCommand<span class="token punctuation">(</span>myModify<span class="token punctuation">)</span><span class="token punctuation">;</span>
 printjson<span class="token punctuation">(</span>ResultMessage<span class="token punctuation">)</span></code></pre>
 <p>findAndModify的性能是没有直接使用db.collections.update的性能好，但是在实际工作中都是使用它，毕竟要商用的程序安全性还是比较重要的。</p>
@@ -482,7 +482,7 @@ printjson<span class="token punctuation">(</span>ResultMessage<span class="token
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitthink.github.io/categories/database/fa005713.html">https://gitthink.github.io/categories/database/fa005713.html</a>
+                    <a href="https://gitthink.gitee.io/categories/database/fa005713.html">https://gitthink.gitee.io/categories/database/fa005713.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -982,7 +982,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.7k</span>&nbsp;字
+                class="white-color">20.8k</span>&nbsp;字
             
             
             
