@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-06-03
+                    2020-07-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    546
+                    522
                 </div>
                 
 
@@ -416,38 +416,38 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>首先要进入我们的admin库中，进入方法是直接使用use admin 就可以。进入后可以使用show collections来查看数据库中的集合。默认是只有一个集合的（system.version）。<br>创建用户可以用db.createUser方法来完成</p>
-<pre class=" language-js"><code class="language-js">db<span class="token punctuation">.</span><span class="token function">createUser</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-js"><code class="language-js">db<span class="token punctuation">.</span><span class="token function">createUser</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     user<span class="token punctuation">:</span><span class="token string">"panpan"</span><span class="token punctuation">,</span>
     pwd<span class="token punctuation">:</span><span class="token string">"123456"</span><span class="token punctuation">,</span>
-    customData<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    customData<span class="token punctuation">:</span><span class="token punctuation">{</span>
         name<span class="token punctuation">:</span><span class="token string">'潘潘'</span><span class="token punctuation">,</span>
         email<span class="token punctuation">:</span><span class="token string">'211695630@qq.com'</span><span class="token punctuation">,</span>
         age<span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
     roles<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'read'</span><span class="token punctuation">]</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <p>当然我们还可以单独配置一个数据库的权限，比如我们现在要配置compay数据库的权限为读写：</p>
-<pre class=" language-js"><code class="language-js">db<span class="token punctuation">.</span><span class="token function">createUser</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-js"><code class="language-js">db<span class="token punctuation">.</span><span class="token function">createUser</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     user<span class="token punctuation">:</span><span class="token string">"panpan"</span><span class="token punctuation">,</span>
     pwd<span class="token punctuation">:</span><span class="token string">"123456"</span><span class="token punctuation">,</span>
-    customData<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    customData<span class="token punctuation">:</span><span class="token punctuation">{</span>
         name<span class="token punctuation">:</span><span class="token string">'潘潘'</span><span class="token punctuation">,</span>
         email<span class="token punctuation">:</span><span class="token string">'211695630@qq.com'</span><span class="token punctuation">,</span>
         age<span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
     roles<span class="token punctuation">:</span><span class="token punctuation">[</span>
-        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">{</span>
             role<span class="token punctuation">:</span><span class="token string">"readWrite"</span><span class="token punctuation">,</span>
             db<span class="token punctuation">:</span><span class="token string">"company"</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token string">'read'</span>
     <span class="token punctuation">]</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <p>内置角色：<br>数据库用户角色：read、readWrite；<br>数据库管理角色：dbAdmin、dbOwner、userAdmin;<br>集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManage；<br>备份恢复角色：backup、restore；<br>所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase<br>超级用户角色：root<br>内部角色：__system</p>
 <h2 id="查找用户信息"><a href="#查找用户信息" class="headerlink" title="查找用户信息"></a>查找用户信息</h2><p>我们直接可以使用查找的方法，查找用户信息。命令很简单：</p>
 <pre class=" language-bash"><code class="language-bash">db.system.users.find<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>删除用户也是非常简单，直接用remove就可以删除这个用户的信息和权限。</p>
-<pre class=" language-bash"><code class="language-bash">db.system.users.remove<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;user:"panpan"&amp;#125;)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.system.users.remove<span class="token punctuation">(</span><span class="token punctuation">{</span>user:<span class="token string">"panpan"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <h2 id="建权"><a href="#建权" class="headerlink" title="建权"></a>建权</h2><p>有时候我们要验证用户的用户名密码是否正确，就需要用到MongoDB提供的建权操作。也算是一种登录操作，不过MongoDB把这叫做建权。</p>
 <pre class=" language-bash"><code class="language-bash">db.auth<span class="token punctuation">(</span><span class="token string">"panpan"</span>,<span class="token string">"123456"</span><span class="token punctuation">)</span></code></pre>
 <p>如果正确返回1，如果错误返回0。（Error：Authentication failed。）</p>
@@ -986,7 +986,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.8k</span>&nbsp;字
+                class="white-color">18.7k</span>&nbsp;字
             
             
             

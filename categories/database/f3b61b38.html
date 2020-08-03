@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-04-26
+                    2020-07-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    540
+                    500
                 </div>
                 
 
@@ -422,15 +422,15 @@
 </ul>
 <h2 id="批量插入"><a href="#批量插入" class="headerlink" title="批量插入"></a>批量插入</h2><p>批量数据插入是以数组的方式进行的（如果写错，可以3个回车可以切出来）。我们现在命令行中敲入下面的代码，我们可以看到数据顺利插入了。</p>
 <pre class=" language-bash"><code class="language-bash">db.test.insert<span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"_id":1&amp;#125;,</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"_id":2&amp;#125;,</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"_id":3&amp;#125;</span>
+    <span class="token punctuation">{</span><span class="token string">"_id"</span>:1<span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span><span class="token string">"_id"</span>:2<span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span><span class="token string">"_id"</span>:3<span class="token punctuation">}</span>
 <span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
 <p>老版本MongoDB（3.2以前的版本基本都需要）是需要在Insert前加一个batch单词的，如下代码。</p>
 <pre class=" language-bash"><code class="language-bash">db.test.batchInsert<span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"_id":1&amp;#125;,</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"_id":2&amp;#125;,</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"_id":3&amp;#125;</span>
+    <span class="token punctuation">{</span><span class="token string">"_id"</span>:1<span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span><span class="token string">"_id"</span>:2<span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span><span class="token string">"_id"</span>:3<span class="token punctuation">}</span>
 <span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>注意一次插入不要超过48M，像.zip和大图片什么的尽量用静态存储，MongoDB存储静态路径就好，这也算是一个规则。</p>
@@ -439,9 +439,9 @@
 <pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> startTime <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//得到开始时间</span>
 <span class="token keyword">var</span>  db <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">'log'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//链接数据库</span>
 <span class="token comment" spellcheck="true">//开始循环</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">1000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    db<span class="token punctuation">.</span>test<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>num<span class="token punctuation">:</span>i<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">1000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    db<span class="token punctuation">.</span>test<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">{</span>num<span class="token punctuation">:</span>i<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token keyword">var</span> runTime <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>startTime<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//计算时间差</span>
 print <span class="token punctuation">(</span><span class="token string">'This run this is:'</span><span class="token operator">+</span>runTime<span class="token operator">+</span><span class="token string">'ms'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//打印出来</span></code></pre>
 <p>我测试的时间509ms，这个速度虽然和电脑性能有关，但还是不太理想，1000条数据用了将近半秒。</p>
@@ -449,9 +449,9 @@ print <span class="token punctuation">(</span><span class="token string">'This r
 <pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> startTime <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span>  db <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">'log'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> tempArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>              <span class="token comment" spellcheck="true">//声明一个数组</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">1000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//循环向数组中放入值</span>
-    tempArray<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>num<span class="token punctuation">:</span>i<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">1000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token comment" spellcheck="true">//循环向数组中放入值</span>
+    tempArray<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>num<span class="token punctuation">:</span>i<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 db<span class="token punctuation">.</span>test<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>tempArray<span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">//批量一次插入</span>
 <span class="token keyword">var</span> runTime <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>startTime<span class="token punctuation">;</span>
 print <span class="token punctuation">(</span><span class="token string">'This run this is:'</span><span class="token operator">+</span>runTime<span class="token operator">+</span><span class="token string">'ms'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
@@ -982,7 +982,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.8k</span>&nbsp;字
+                class="white-color">18.7k</span>&nbsp;字
             
             
             

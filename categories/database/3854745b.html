@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-05-16
+                    2020-07-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    274
+                    266
                 </div>
                 
 
@@ -419,17 +419,17 @@
 <pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> db <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">"company"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//进行链接对应的集合collections</span>
 <span class="token keyword">var</span> result <span class="token operator">=</span> db<span class="token punctuation">.</span>workmate<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//声明变量result，并把查询结果赋值给result</span>
 <span class="token comment" spellcheck="true">//利用游标的hasNext()进行循环输出结果。</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token function">printjson</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//用json格式打印结果</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>写完后，现在你只需要在终端中进行load()就可以执行了，再也不用麻烦的复制粘贴了。</p>
 <h2 id="forEach循环"><a href="#forEach循环" class="headerlink" title="forEach循环"></a>forEach循环</h2><p>利用hasNext循环结果，需要借助while的帮助，MongoDB也为我们提供了forEach循环，现在修改上边的代码，使用forEach循环来输出结果。</p>
 <pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> db <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">"company"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//进行链接对应的集合collections</span>
 <span class="token keyword">var</span> result <span class="token operator">=</span> db<span class="token punctuation">.</span>workmate<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//声明变量result，并把查询结果赋值给result</span>
 <span class="token comment" spellcheck="true">//利用游标的hasNext()进行循环输出结果。</span>
-result<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+result<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token function">printjson</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <p>作为个人觉得forEach循环更为优雅。这两种方法都是非常不错的,凭借自己爱好进行选择吧。</p>
 
             </div>
@@ -956,7 +956,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.8k</span>&nbsp;字
+                class="white-color">18.7k</span>&nbsp;字
             
             
             

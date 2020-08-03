@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-05-14
+                    2020-07-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    373
+                    353
                 </div>
                 
 
@@ -423,11 +423,11 @@
 <li>sort: 排序方式，从小到大排序使用1，从大到小排序使用-1。</li>
 </ul>
 <h2 id="分页Demo"><a href="#分页Demo" class="headerlink" title="分页Demo"></a>分页Demo</h2><p>明白了上面这些选项，现在可以作一个最简单的分页，我们把同事集合（collections）进行分页，每页显示两个，并且按照年龄从小到大的顺序排列。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;,&amp;#123;name:true,age:true,_id:false&amp;#125;).limit(0).skip(2).sort(&amp;#123;age:1&amp;#125;);</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span>name:true,age:true,_id:false<span class="token punctuation">}</span><span class="token punctuation">)</span>.limit<span class="token punctuation">(</span>0<span class="token punctuation">)</span>.skip<span class="token punctuation">(</span>2<span class="token punctuation">)</span>.sort<span class="token punctuation">(</span><span class="token punctuation">{</span>age:1<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h2 id="where修饰符"><a href="#where修饰符" class="headerlink" title="$where修饰符"></a>$where修饰符</h2><p>它是一个非常强大的修饰符，但强大的背后也意味着有风险存在。它可以让我们在条件里使用javascript的方法来进行复杂查询。我们先来看一个最简单的例子，现在要查询年龄大于25岁的人员。</p>
 <pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;$where:"this.age>25"&amp;#125;,</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:true,age:true,_id:false&amp;#125;</span>
+    <span class="token punctuation">{</span><span class="token variable">$where</span><span class="token keyword">:</span><span class="token string">"this.age>25"</span><span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span>name:true,age:true,_id:false<span class="token punctuation">}</span>
 <span class="token punctuation">)</span></code></pre>
 <p>这里的this指向的是workmate（查询集合）本身。这样我们就可以在程序中随意调用。虽然强大和灵活，但是这种查询对于数据库的压力和安全性都会变重，所以在工作中尽量减少$where修饰符的使用。</p>
 
@@ -955,7 +955,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.8k</span>&nbsp;字
+                class="white-color">18.7k</span>&nbsp;字
             
             
             

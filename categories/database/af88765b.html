@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="干货小栈" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -391,14 +391,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-05-09
+                    2020-07-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    678
+                    592
                 </div>
                 
 
@@ -415,56 +415,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="构造数据"><a href="#构造数据" class="headerlink" title="构造数据"></a>构造数据</h2><pre class=" language-bash"><code class="language-bash">var workmate1<span class="token operator">=</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+                <h2 id="构造数据"><a href="#构造数据" class="headerlink" title="构造数据"></a>构造数据</h2><pre class=" language-bash"><code class="language-bash">var workmate1<span class="token operator">=</span><span class="token punctuation">{</span>
     name:<span class="token string">'panpan'</span>,
     age:24,
     sex:1,
     job:<span class="token string">'前端'</span>,
-    skill:<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    skill:<span class="token punctuation">{</span>
         skillOne:<span class="token string">'HTML+CSS'</span>,
         SkillTwo:<span class="token string">'JavaScript'</span>,
         SkillThree:<span class="token string">'PHP'</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+    <span class="token punctuation">}</span>,
     regeditTime:new Date<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 
-var workmate2<span class="token operator">=</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+var workmate2<span class="token operator">=</span><span class="token punctuation">{</span>
     name:<span class="token string">'panda'</span>,
     age:20,
     sex:1,
     job:<span class="token string">'JAVA后端'</span>,
-    skill:<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    skill:<span class="token punctuation">{</span>
         skillOne:<span class="token string">'HTML+CSS'</span>,
         SkillTwo:<span class="token string">'J2EE'</span>,
         SkillThree:<span class="token string">'PPT'</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+    <span class="token punctuation">}</span>,
     regeditTime:new Date<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 
-var workmate3<span class="token operator">=</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+var workmate3<span class="token operator">=</span><span class="token punctuation">{</span>
     name:<span class="token string">'jspan'</span>,
     age:20,
     sex:1,
     job:<span class="token string">'UI设计'</span>,
-    skill:<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    skill:<span class="token punctuation">{</span>
         skillOne:<span class="token string">'PhotoShop'</span>,
         SkillTwo:<span class="token string">'UI'</span>,
         SkillThree:<span class="token string">'Word+Excel+PPT'</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+    <span class="token punctuation">}</span>,
     regeditTime:new Date<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-var workmate4<span class="token operator">=</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+<span class="token punctuation">}</span>
+var workmate4<span class="token operator">=</span><span class="token punctuation">{</span>
     name:<span class="token string">'xiaowang'</span>,
     age:26,
     sex:1,
     job:<span class="token string">'UI设计'</span>,
-    skill:<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    skill:<span class="token punctuation">{</span>
         skillOne:<span class="token string">'PhotoShop'</span>,
         SkillTwo:<span class="token string">'UI'</span>,
         SkillThree:<span class="token string">'Word+Excel+PPT'</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;,</span>
+    <span class="token punctuation">}</span>,
     regeditTime:new Date<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 
 
 var db<span class="token operator">=</span>connect<span class="token punctuation">(</span><span class="token string">'company'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -472,23 +472,23 @@ var workmateArray<span class="token operator">=</span><span class="token punctua
 db.workmate.insert<span class="token punctuation">(</span>workmateArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
 print<span class="token punctuation">(</span><span class="token string">'[SUCCESS]：The data was inserted successfully'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h2 id="简单查找"><a href="#简单查找" class="headerlink" title="简单查找"></a>简单查找</h2><p>比如我们现在要查找数据中年龄(age)为20。那我们直接进行查找加条件就可以了。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;age:20&amp;#125;)</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span><span class="token punctuation">{</span>age:20<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <h2 id="筛选字段"><a href="#筛选字段" class="headerlink" title="筛选字段"></a>筛选字段</h2><p>现在返回来的数据项太多，太乱，有时候我们的程序并不需要这么多选项。比如我们只需要姓名和年龄就可以了。这时候我们需要写第二个参数，看下面的代码。</p>
 <pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;age:20&amp;#125;,</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:true,age:true&amp;#125;</span>
+    <span class="token punctuation">{</span>age:20<span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span>name:true,age:true<span class="token punctuation">}</span>
 <span class="token punctuation">)</span></code></pre>
 <p>你会在终端中看到如下结果：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "_id" : ObjectId("5cc0047eec051ac9f4b1a94a"), "name" : "panda", "age" : 20 &amp;#125;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "_id" : ObjectId("5cc11c51f3101b6fe831af75"), "name" : "jspan", "age" : 20 &amp;#125;</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span> <span class="token string">"_id"</span> <span class="token keyword">:</span> ObjectId<span class="token punctuation">(</span><span class="token string">"5cc0047eec051ac9f4b1a94a"</span><span class="token punctuation">)</span>, <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"panda"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 20 <span class="token punctuation">}</span>
+<span class="token punctuation">{</span> <span class="token string">"_id"</span> <span class="token keyword">:</span> ObjectId<span class="token punctuation">(</span><span class="token string">"5cc11c51f3101b6fe831af75"</span><span class="token punctuation">)</span>, <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"jspan"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 20 <span class="token punctuation">}</span></code></pre>
 <p>细心的小伙伴会发现还不够完美，多了一个ID字段，这个也不是我们想要的，这时候只要把_id:false就可以了。当然这里的false和true，也可以用0和1表示。</p>
 <pre class=" language-bash"><code class="language-bash">db.workmate.find<span class="token punctuation">(</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;age:20&amp;#125;,</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:true,age:true,_id:false&amp;#125;</span>
+    <span class="token punctuation">{</span>age:20<span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span>name:true,age:true,_id:false<span class="token punctuation">}</span>
 <span class="token punctuation">)</span></code></pre>
 <p>这时候你在终端中查看结果，已经是我们想要的了。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "panda", "age" : 20 &amp;#125;</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; "name" : "jspan", "age" : 20 &amp;#125;</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"panda"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 20 <span class="token punctuation">}</span>
+<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"jspan"</span>, <span class="token string">"age"</span> <span class="token keyword">:</span> 20 <span class="token punctuation">}</span></code></pre>
 <p>其实这些查找操作，都是在作等于的阶段，但是不光只有等于查询，我们需要更多的查询条件。</p>
 <h2 id="不等修饰符"><a href="#不等修饰符" class="headerlink" title="不等修饰符"></a>不等修饰符</h2><ul>
 <li>小于($lt): 英文全称less-than</li>
@@ -499,14 +499,14 @@ print<span class="token punctuation">(</span><span class="token string">'[SUCCES
 </ul>
 <p>我们现在要查找一下，公司内年龄小于25大于20岁的人员。看下面的代码。</p>
 <pre class=" language-bsah"><code class="language-bsah">db.workmate.find(
-    &#123;age:&#123;$lte:25,$gte:20&#125;&#125;,
-    &#123;name:true,age:true,_id:false&#125;
+    {age:{$lte:25,$gte:20}},
+    {name:true,age:true,_id:false}
 )</code></pre>
 <h2 id="日期查找"><a href="#日期查找" class="headerlink" title="日期查找"></a>日期查找</h2><p>MongoDB也提供了方便的日期查找方法，现在我们要查找注册日期大于2019年5月9日的数据，我们可以这样写代码。</p>
 <pre class=" language-bash"><code class="language-bash">var startDate<span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token string">'05/09/2019'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 db.workmate.find<span class="token punctuation">(</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;regeditTime:&amp;#123;$gt:startDate&amp;#125;&amp;#125;,</span>
-    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:true,age:true,"skill.skillOne":true,_id:false&amp;#125;</span>
+    <span class="token punctuation">{</span>regeditTime:<span class="token punctuation">{</span><span class="token variable">$gt</span>:startDate<span class="token punctuation">}</span><span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span>name:true,age:true,<span class="token string">"skill.skillOne"</span>:true,_id:false<span class="token punctuation">}</span>
 <span class="token punctuation">)</span></code></pre>
 <p>我们先申明了一个日期变量，然后使用大于符进行筛选。</p>
 
@@ -1034,7 +1034,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.8k</span>&nbsp;字
+                class="white-color">18.7k</span>&nbsp;字
             
             
             
