@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitthink.gitee.io/"/>
-  <updated>2020-07-28T03:32:13.655Z</updated>
+  <updated>2020-08-12T02:34:34.441Z</updated>
   <id>https://gitthink.gitee.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序中使用阿里图标库iconfont</title>
+    <link href="https://gitthink.gitee.io/categories/frontend/84b12bae.html"/>
+    <id>https://gitthink.gitee.io/categories/frontend/84b12bae.html</id>
+    <published>2020-08-12T02:02:19.000Z</published>
+    <updated>2020-08-12T02:34:34.441Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;第一步：下载需要的字体图标&quot;&gt;&lt;a href=&quot;#第一步：下载需要的字体图标&quot; class=&quot;headerlink&quot; title=&quot;第一步：下载需要的字体图标&quot;&gt;&lt;/a&gt;第一步：下载需要的字体图标&lt;/h2&gt;&lt;p&gt;进入阿里图标官网&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://gitthink.gitee.io/categories/frontend/"/>
+    
+    
+      <category term="微信小程序" scheme="https://gitthink.gitee.io/tags/mpminiprogram/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS + JS 网站变灰（变黑白）</title>
@@ -526,34 +553,6 @@
         
           &lt;p&gt;把命令写入JS中： 现在模拟一个用户登录日志表的信息，用JS进行编写。新在一个新建的目录下，比如D:/mongoShell/，新建一个goTask.js文件。文件内容如下：&lt;/p&gt;
 &lt;pre class=&quot; language-js&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="https://gitthink.gitee.io/categories/database/"/>
-    
-    
-      <category term="MongoDB" scheme="https://gitthink.gitee.io/tags/mongodb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mongo基本命令</title>
-    <link href="https://gitthink.gitee.io/categories/database/1ad5be0d.html"/>
-    <id>https://gitthink.gitee.io/categories/database/1ad5be0d.html</id>
-    <published>2019-04-25T02:35:36.000Z</published>
-    <updated>2020-07-14T03:19:05.597Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;先来一个常用的赋值和输出命令，熟悉一下。&lt;/p&gt;
-&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;var x&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span
         
       
     
