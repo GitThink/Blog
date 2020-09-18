@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="索引入门, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
+    <meta name="keywords" content="VSCode初次写vue项目并一键生成.vue模版, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta name="description" content="技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>索引入门 | 干货小栈</title>
+    <title>VSCode初次写vue项目并一键生成.vue模版 | 干货小栈</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/awesome/css/all.css">
@@ -237,12 +237,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">索引入门</h1>
+                    <h1 class="description center-align post-title">VSCode初次写vue项目并一键生成.vue模版</h1>
                 </div>
             </div>
         </div>
@@ -359,8 +359,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/mongodb/">
-                                <span class="chip bg-color">MongoDB</span>
+                            <a href="/tags/vscode/">
+                                <span class="chip bg-color">VSCode</span>
                             </a>
                         
                     </div>
@@ -371,8 +371,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/database/" class="post-category">
-                                数据库
+                            <a href="/categories/tool/" class="post-category">
+                                工具
                             </a>
                         
                     </div>
@@ -384,21 +384,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-27
+                    2020-09-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2020-09-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    520
+                    386
                 </div>
                 
 
@@ -415,53 +415,93 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="普通查询性能"><a href="#普通查询性能" class="headerlink" title="普通查询性能"></a>普通查询性能</h2><p>我们先制作一个普通查询，随便查找一个用户名，并计算出查询和打印的时间，因为有200万条数据，所以性能不会很高。</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> startTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//得到程序运行的开始时间</span>
-<span class="token keyword">var</span> db <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">'company'</span><span class="token punctuation">)</span>          <span class="token comment" spellcheck="true">//链接数据库</span>
-<span class="token keyword">var</span> rs<span class="token operator">=</span>db<span class="token punctuation">.</span>randInfo<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>username<span class="token punctuation">:</span><span class="token string">"gu7v2dtb"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//根据用户名查找用户</span>
-rs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>rs<span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token function">printjson</span><span class="token punctuation">(</span>rs<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>                     <span class="token comment" spellcheck="true">//循环输出</span>
-<span class="token keyword">var</span> runTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>startTime<span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">//得到程序运行时间</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'[SUCCESS]This run time is:'</span><span class="token operator">+</span>runTime<span class="token operator">+</span><span class="token string">'ms'</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">//打印出运行时间</span></code></pre>
-<p>上边的代码就是一个普通的查询，只不过是记录了时间。在终端运行后，可以得到大概的运行时间是0.8秒左右（电脑性能不同，有所不同），第一次无缓存的运行时间大概是3.5秒左右。这个时间是没办法满足我们的日常查询的。</p>
-<h2 id="建立索引"><a href="#建立索引" class="headerlink" title="建立索引"></a>建立索引</h2><p>试着为用户名（username）建立索引。建立索引只需要一句话就可以了。</p>
-<pre class=" language-bash"><code class="language-bash">db.randInfo.ensureIndex<span class="token punctuation">(</span><span class="token punctuation">{</span>username:1<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>查看现有索引</p>
-<pre class=" language-bash"><code class="language-bash">db.randInfo.getIndexes<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p>终端的结果，现在只有一个索引值:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-        <span class="token string">"v"</span> <span class="token keyword">:</span> 2,
-        <span class="token string">"key"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span>
-                <span class="token string">"_id"</span> <span class="token keyword">:</span> 1
-        <span class="token punctuation">}</span>,
-        <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"_id_"</span>,
-        <span class="token string">"ns"</span> <span class="token keyword">:</span> <span class="token string">"company.randInfo"</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">]</span></code></pre>
-<p>那现在使用命令建立一下索引db.randomInfo.ensureIndex({uername:1})，我的电脑大概要50秒左右，建立好后我们重新使用db.randomInfo.getIndexes()，查看一下结果。</p>
-<p>结果如下：已经变成了两条索引。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-        <span class="token string">"v"</span> <span class="token keyword">:</span> 2,
-        <span class="token string">"key"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span>
-                <span class="token string">"_id"</span> <span class="token keyword">:</span> 1
-        <span class="token punctuation">}</span>,
-        <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"_id_"</span>,
-        <span class="token string">"ns"</span> <span class="token keyword">:</span> <span class="token string">"company.randInfo"</span>
-    <span class="token punctuation">}</span>,
-    <span class="token punctuation">{</span>
-        <span class="token string">"v"</span> <span class="token keyword">:</span> 2,
-        <span class="token string">"key"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span>
-                <span class="token string">"username"</span> <span class="token keyword">:</span> 1
-        <span class="token punctuation">}</span>,
-        <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"uername_1"</span>,
-        <span class="token string">"ns"</span> <span class="token keyword">:</span> <span class="token string">"company.randInfo"</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">]</span></code></pre>
-<p>然后我们再来load一下demo09.js文件（load(‘./demo09.js’)），看一下现在多少秒可以查询出来。这时候查询的时间缩短到了4ms左右，查询性能提升了大概200倍左右。</p>
-<blockquote>
-<p>总结：无论是在关系型数据库还是文档数据库，建立索引都是非常重要的。前边讲了，索引这东西是要消耗硬盘和内存资源的，所以还是要根据程序需要进行建立了。MongoDB也给我们进行了限制，只允许我们建立64个索引值。</p>
-</blockquote>
+                <h2 id="安装vscode"><a href="#安装vscode" class="headerlink" title="安装vscode"></a>安装vscode</h2><p>官网地址：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a></p>
+<h2 id="安装插件，识别vue文件"><a href="#安装插件，识别vue文件" class="headerlink" title="安装插件，识别vue文件"></a>安装插件，识别vue文件</h2><p>插件库中搜索<code>Vetur</code>，点击安装，安装完成之后点击重新加载。</p>
+<h2 id="新建代码片段"><a href="#新建代码片段" class="headerlink" title="新建代码片段"></a>新建代码片段</h2><p>文件–&gt;首选项–&gt;用户代码片段<br>然后再弹出的输入框中输入<code>vue</code>，然后回车(Enter)。<br>在<code>vue.json</code>中写上代码片段,代码如下：</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"Print to console"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"vue"</span><span class="token punctuation">,</span>
+        <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"&lt;!-- $1 -->"</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;template>"</span><span class="token punctuation">,</span>
+            <span class="token string">"   &lt;div class=\"$2\">$5&lt;/div>"</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;/template>"</span><span class="token punctuation">,</span>
+            <span class="token string">""</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;script>"</span><span class="token punctuation">,</span>
+            <span class="token string">"//这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）"</span><span class="token punctuation">,</span>
+            <span class="token string">"//例如：import 《组件名称》 from '《组件路径》';"</span><span class="token punctuation">,</span>
+            <span class="token string">""</span><span class="token punctuation">,</span>
+            <span class="token string">"export default {"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //import引入的组件需要注入到对象中才能使用"</span><span class="token punctuation">,</span>
+            <span class="token string">"   components: {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   data() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       //这里存放数据"</span><span class="token punctuation">,</span>
+            <span class="token string">"       return {"</span><span class="token punctuation">,</span>
+            <span class="token string">"           "</span><span class="token punctuation">,</span>
+            <span class="token string">"       };"</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //监听属性 类似于data概念"</span><span class="token punctuation">,</span>
+            <span class="token string">"   computed: {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //监控data中的数据变化"</span><span class="token punctuation">,</span>
+            <span class="token string">"   watch: {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //方法集合"</span><span class="token punctuation">,</span>
+            <span class="token string">"   methods: {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //生命周期 - 创建完成（可以访问当前this实例）"</span><span class="token punctuation">,</span>
+            <span class="token string">"   created() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //生命周期 - 挂载完成（可以访问DOM元素）"</span><span class="token punctuation">,</span>
+            <span class="token string">"   mounted() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //生命周期 - 创建之前"</span><span class="token punctuation">,</span>
+            <span class="token string">"   beforeCreate() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //生命周期 - 挂载之前"</span><span class="token punctuation">,</span>
+            <span class="token string">"   beforeMount() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //生命周期 - 更新之前"</span><span class="token punctuation">,</span>
+            <span class="token string">"   beforeUpdate() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //生命周期 - 更新之后"</span><span class="token punctuation">,</span>
+            <span class="token string">"   updated() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //生命周期 - 销毁之前"</span><span class="token punctuation">,</span>
+            <span class="token string">"   beforeDestroy() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //生命周期 - 销毁完成"</span><span class="token punctuation">,</span>
+            <span class="token string">"   destroyed() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"   //如果页面有keep-alive缓存功能，这个函数会触发"</span><span class="token punctuation">,</span>
+            <span class="token string">"   activated() {"</span><span class="token punctuation">,</span>
+            <span class="token string">"       "</span><span class="token punctuation">,</span>
+            <span class="token string">"   },"</span><span class="token punctuation">,</span>
+            <span class="token string">"}"</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;/script>"</span><span class="token punctuation">,</span>
+            <span class="token string">""</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;style lang='scss' scoped>"</span><span class="token punctuation">,</span>
+            <span class="token string">"//@import url($3); 引入公共css类"</span><span class="token punctuation">,</span>
+            <span class="token string">"$4"</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;/style>"</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Log output to console"</span>
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span></code></pre>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>上面代码中的 <code>&quot;prefix&quot;: &quot;vue&quot;</code>, 就是快捷键；保存好之后，新建.vue结尾的文件，输入 <code>vue</code> 按键盘的 <code>tab</code> 就行。</p>
 
             </div>
             <hr/>
@@ -487,7 +527,7 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitthink.gitee.io/categories/database/d137d16e.html">https://gitthink.gitee.io/categories/database/d137d16e.html</a>
+                    <a href="https://gitthink.gitee.io/categories/tool/83dcefb7.html">https://gitthink.gitee.io/categories/tool/83dcefb7.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -525,8 +565,8 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/mongodb/">
-                                    <span class="chip bg-color">MongoDB</span>
+                                <a href="/tags/vscode/">
+                                    <span class="chip bg-color">VSCode</span>
                                 </a>
                             
                         </div>
@@ -694,46 +734,48 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/categories/database/483e80d4.html">
+                <a href="/categories/tool/83dcefb7.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/22.jpg" class="responsive-img" alt="复合索引">
+                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/20.jpg" class="responsive-img" alt="VSCode初次写vue项目并一键生成.vue模版">
                         
-                        <span class="card-title">复合索引</span>
+                        <span class="card-title">VSCode初次写vue项目并一键生成.vue模版</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            复合索引的使用和语法,包括复合索引的建立、删除和一些使用索引的小窍门。
+                            初次写vue项目并一键生成.vue模版
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/database/" class="post-category">
-                                    数据库
+                            <a href="/categories/tool/" class="post-category">
+                                    工具
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mongodb/">
-                        <span class="chip bg-color">MongoDB</span>
+                    <a href="/tags/vscode/">
+                        <span class="chip bg-color">VSCode</span>
                     </a>
                     
                 </div>
@@ -747,31 +789,31 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/categories/database/a630e1f8.html">
+                <a href="/categories/frontend/84b12bae.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/6.jpg" class="responsive-img" alt="MongoDB构造百万级数据">
+                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/17.jpg" class="responsive-img" alt="微信小程序中使用阿里图标库iconfont">
                         
-                        <span class="card-title">MongoDB构造百万级数据</span>
+                        <span class="card-title">微信小程序中使用阿里图标库iconfont</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            通过随机数的方法，创造出一个百万级数据的数据库出来。
+                            微信小程序中使用阿里图标库，减少图片的使用，提升性能。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/database/" class="post-category">
-                                    数据库
+                            <a href="/categories/frontend/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -781,8 +823,8 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mongodb/">
-                        <span class="chip bg-color">MongoDB</span>
+                    <a href="/tags/mpminiprogram/">
+                        <span class="chip bg-color">微信小程序</span>
                     </a>
                     
                 </div>
