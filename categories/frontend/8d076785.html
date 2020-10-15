@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="复合索引, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
+    <meta name="keywords" content="特殊日子全站网页自动变灰, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta name="description" content="技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>复合索引 | 干货小栈</title>
+    <title>特殊日子全站网页自动变灰 | 干货小栈</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/awesome/css/all.css">
@@ -237,12 +237,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/custom/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">复合索引</h1>
+                    <h1 class="description center-align post-title">特殊日子全站网页自动变灰</h1>
                 </div>
             </div>
         </div>
@@ -359,8 +359,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/mongodb/">
-                                <span class="chip bg-color">MongoDB</span>
+                            <a href="/tags/css/">
+                                <span class="chip bg-color">CSS</span>
+                            </a>
+                        
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">Javascript</span>
                             </a>
                         
                     </div>
@@ -371,8 +375,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/database/" class="post-category">
-                                数据库
+                            <a href="/categories/frontend/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -384,21 +388,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-29
+                    2020-10-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2020-10-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    646
+                    137
                 </div>
                 
 
@@ -415,60 +419,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="索引中的小坑"><a href="#索引中的小坑" class="headerlink" title="索引中的小坑"></a>索引中的小坑</h2><p>通过实际开发和性能对比，总结了几条不用索引的情况：</p>
-<ul>
-<li>数据不超万条时，不需要使用索引。性能的提升并不明显，而大大增加了内存和硬盘的消耗。</li>
-<li>查询数据超过表数据量30%时，不要使用索引字段查询。实际证明会比不使用索引更慢，因为它大量检索了索引表和我们原表。</li>
-<li>数字索引，要比字符串索引快的多，在百万级甚至千万级数据量面前，使用数字索引是个明智的选择。</li>
-<li>把你经常查询的数据做成一个内嵌数据（对象型的数据），然后集体进行索引。</li>
-</ul>
-<h2 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引"></a>复合索引</h2><p>复合索引就是两条以上的索引,之前我们已经把username字段建立了索引，我们现在把randNum0这个字段也设置成索引。</p>
-<pre class=" language-bash"><code class="language-bash">db.randInfo.ensureIndex<span class="token punctuation">(</span><span class="token punctuation">{</span>randNum0:1<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>建立好后，我们再用查询索引状态命令进行查询。</p>
-<pre class=" language-bash"><code class="language-bash">db.randInfo.getIndexes<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p>这时候已经是两个自建索引了，一共有三个索引。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-                <span class="token string">"v"</span> <span class="token keyword">:</span> 2,
-                <span class="token string">"key"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span>
-                        <span class="token string">"_id"</span> <span class="token keyword">:</span> 1
-                <span class="token punctuation">}</span>,
-                <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"_id_"</span>,
-                <span class="token string">"ns"</span> <span class="token keyword">:</span> <span class="token string">"company.randInfo"</span>
-        <span class="token punctuation">}</span>,
-        <span class="token punctuation">{</span>
-                <span class="token string">"v"</span> <span class="token keyword">:</span> 2,
-                <span class="token string">"key"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span>
-                        <span class="token string">"username"</span> <span class="token keyword">:</span> 1
-                <span class="token punctuation">}</span>,
-                <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"username_1"</span>,
-                <span class="token string">"ns"</span> <span class="token keyword">:</span> <span class="token string">"company.randInfo"</span>
-        <span class="token punctuation">}</span>,
-        <span class="token punctuation">{</span>
-                <span class="token string">"v"</span> <span class="token keyword">:</span> 2,
-                <span class="token string">"key"</span> <span class="token keyword">:</span> <span class="token punctuation">{</span>
-                        <span class="token string">"randNum0"</span> <span class="token keyword">:</span> 1
-                <span class="token punctuation">}</span>,
-                <span class="token string">"name"</span> <span class="token keyword">:</span> <span class="token string">"randNum0_1"</span>,
-                <span class="token string">"ns"</span> <span class="token keyword">:</span> <span class="token string">"company.randInfo"</span>
+                <h2 id="依赖js定期自动变灰"><a href="#依赖js定期自动变灰" class="headerlink" title="依赖js定期自动变灰"></a>依赖js定期自动变灰</h2><p>自定义日期可酌情修改。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">var</span> myDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> mon <span class="token operator">=</span> myDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//获取当前月</span>
+    <span class="token keyword">var</span> date <span class="token operator">=</span> myDate<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//获取当前日</span>
+    <span class="token keyword">var</span> days<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'4.4'</span><span class="token punctuation">,</span><span class="token string">'5.12'</span><span class="token punctuation">,</span><span class="token string">'7.7'</span><span class="token punctuation">,</span><span class="token string">'9.9'</span><span class="token punctuation">,</span><span class="token string">'9.18'</span><span class="token punctuation">,</span><span class="token string">'12.13'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//在这里自定义日期</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> day <span class="token keyword">of</span> days<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> d<span class="token operator">=</span>day<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>mon <span class="token operator">==</span> d<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> date <span class="token operator">==</span> d<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> gray<span class="token operator">=</span><span class="token string">'grayscale(100%)'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//自动变灰</span>
+            <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"html,body"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"filter"</span><span class="token punctuation">:</span><span class="token string">'gray !important;'</span><span class="token punctuation">,</span><span class="token string">"filter"</span><span class="token punctuation">:</span><span class="token string">"progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)"</span><span class="token punctuation">,</span><span class="token string">"filter"</span><span class="token punctuation">:</span>gray<span class="token punctuation">,</span><span class="token string">"-webkit-filter"</span><span class="token punctuation">:</span>gray<span class="token punctuation">,</span><span class="token string">'-moz-filter'</span><span class="token punctuation">:</span>gray<span class="token punctuation">,</span><span class="token string">'-ms-filter'</span><span class="token punctuation">:</span>gray<span class="token punctuation">,</span><span class="token string">'-o-filter'</span><span class="token punctuation">:</span>gray<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-<span class="token punctuation">]</span></code></pre>
-<h2 id="两个索引同时查询"><a href="#两个索引同时查询" class="headerlink" title="两个索引同时查询"></a>两个索引同时查询</h2><p>我们同时查询两个索引的值，看看效果是怎么样的。</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> startTime<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> db <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">'company'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span>  rs<span class="token operator">=</span> db<span class="token punctuation">.</span>randInfo<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>username<span class="token punctuation">:</span><span class="token string">'gu7v2dtb'</span><span class="token punctuation">,</span>randNum0<span class="token punctuation">:</span><span class="token number">565509</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-rs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>rs<span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token function">printjson</span><span class="token punctuation">(</span>rs<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> runTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span>startTime<span class="token punctuation">;</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'[Demo]this run time is '</span><span class="token operator">+</span>runTime<span class="token operator">+</span><span class="token string">'ms'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>从性能上看并没有什么特殊的变化，查询时间还是在4ms左右。MongoDB的复合查询是按照我们的索引顺序进行查询的。就是我们用db.randInfo.getIndexes()查询出的数组。</p>
-<h2 id="指定索引查询（hint）"><a href="#指定索引查询（hint）" class="headerlink" title="指定索引查询（hint）"></a>指定索引查询（hint）</h2><p>数字的索引要比字符串的索引快，这就需要一个方法来打破索引表的查询顺序，用我们自己指定的索引优先查询，这个方法就是hint().</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> rs<span class="token operator">=</span> db<span class="token punctuation">.</span>randInfo<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>username<span class="token punctuation">:</span><span class="token string">'gu7v2dtb'</span><span class="token punctuation">,</span>randNum0<span class="token punctuation">:</span><span class="token number">565509</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hint</span><span class="token punctuation">(</span><span class="token punctuation">{</span>randNum0<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>由于数据量和复杂成都还是不大，所以看不出来明显的性能提升，等工作中遇到大数据时，一定会得到很好的效果的。</p>
-<h2 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h2><p>当索引性能不佳或起不到作用时，我们需要删除索引，删除索引的命令是dropIndex().</p>
-<pre class=" language-bash"><code class="language-bash">db.randInfo.dropIndex<span class="token punctuation">(</span><span class="token string">'randNum0_1'</span><span class="token punctuation">)</span> //索引的唯一ID</code></pre>
-<blockquote>
-<p>这里需要注意的是删除时填写的值，并不是我们的字段名称（key），而是我们索引查询表中的name值。</p>
-</blockquote>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 
             </div>
             <hr/>
@@ -494,7 +460,7 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.bestthink.top/categories/database/483e80d4.html">https://blog.bestthink.top/categories/database/483e80d4.html</a>
+                    <a href="https://blog.bestthink.top/categories/frontend/8d076785.html">https://blog.bestthink.top/categories/frontend/8d076785.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -532,8 +498,12 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/mongodb/">
-                                    <span class="chip bg-color">MongoDB</span>
+                                <a href="/tags/css/">
+                                    <span class="chip bg-color">CSS</span>
+                                </a>
+                            
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">Javascript</span>
                                 </a>
                             
                         </div>
@@ -701,46 +671,51 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/categories/database/3f39b042.html">
+                <a href="/categories/frontend/8d076785.html">
                     <div class="card-image">
                         
+                        <img src="/medias/custom/4.jpg" class="responsive-img" alt="特殊日子全站网页自动变灰">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/18.jpg" class="responsive-img" alt="全文索引">
-                        
-                        <span class="card-title">全文索引</span>
+                        <span class="card-title">特殊日子全站网页自动变灰</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            有些时候需要在大篇幅的文章中搜索关键词，比如我写的文章每篇都在万字以上，这时候你想搜索关键字是非常不容易的，MongoDB为我们提供了全文索引。
+                            依赖js定期自动变灰。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/database/" class="post-category">
-                                    数据库
+                            <a href="/categories/frontend/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mongodb/">
-                        <span class="chip bg-color">MongoDB</span>
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">Javascript</span>
                     </a>
                     
                 </div>
@@ -754,31 +729,30 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/categories/database/d137d16e.html">
+                <a href="/categories/frontend/fa005713.html">
                     <div class="card-image">
                         
+                        <img src="/medias/custom/3.jpg" class="responsive-img" alt="【03】Vue基础：v-for的使用">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/22.jpg" class="responsive-img" alt="索引入门">
-                        
-                        <span class="card-title">索引入门</span>
+                        <span class="card-title">【03】Vue基础：v-for的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            建立索引的方法。
+                            使用Vue实现列表渲染。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/database/" class="post-category">
-                                    数据库
+                            <a href="/categories/frontend/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -788,8 +762,8 @@ rs<span class="token punctuation">.</span><span class="token function">forEach</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mongodb/">
-                        <span class="chip bg-color">MongoDB</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">Vue2.0</span>
                     </a>
                     
                 </div>

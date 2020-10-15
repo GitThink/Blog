@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>特殊日子全站网页自动变灰</title>
+      <link href="/categories/frontend/8d076785.html"/>
+      <url>/categories/frontend/8d076785.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="依赖js定期自动变灰"><a href="#依赖js定期自动变灰" class="headerlink" title="依赖js定期自动变灰"></a>依赖js定期自动变灰</h2><p>自定义日期可酌情修改。</p><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span class="token operator">&lt;</span>script<span class="token operator">></span>    <span class="token keyword">var</span> myDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">;</span>    <span class="token keyword">var</span> mon <span class="token operator">=</span> myDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//获取当前月</span>    <span class="token keyword">var</span> date <span class="token operator">=</span> myDate<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//获取当前日</span>    <span class="token keyword">var</span> days<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'4.4'</span><span class="token punctuation">,</span><span class="token string">'5.12'</span><span class="token punctuation">,</span><span class="token string">'7.7'</span><span class="token punctuation">,</span><span class="token string">'9.9'</span><span class="token punctuation">,</span><span class="token string">'9.18'</span><span class="token punctuation">,</span><span class="token string">'12.13'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//在这里自定义日期</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> day <span class="token keyword">of</span> days<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">var</span> d<span class="token operator">=</span>day<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>mon <span class="token operator">==</span> d<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> date <span class="token operator">==</span> d<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            <span class="token keyword">var</span> gray<span class="token operator">=</span><span class="token string">'grayscale(100%)'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//自动变灰</span>            <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"html,body"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"filter"</span><span class="token punctuation">:</span><span class="token string">'gray !important;'</span><span class="token punctuation">,</span><span class="token string">"filter"</span><span class="token punctuation">:</span><span class="token string">"progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)"</span><span class="token punctuation">,</span><span class="token string">"filter"</span><span class="token punctuation">:</span>gray<span class="token punctuation">,</span><span class="token string">"-webkit-filter"</span><span class="token punctuation">:</span>gray<span class="token punctuation">,</span><span class="token string">'-moz-filter'</span><span class="token punctuation">:</span>gray<span class="token punctuation">,</span><span class="token string">'-ms-filter'</span><span class="token punctuation">:</span>gray<span class="token punctuation">,</span><span class="token string">'-o-filter'</span><span class="token punctuation">:</span>gray<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token keyword">break</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【03】Vue基础：v-for的使用</title>
       <link href="/categories/frontend/fa005713.html"/>
       <url>/categories/frontend/fa005713.html</url>
