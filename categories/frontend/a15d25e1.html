@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="VSCode初次写vue项目并一键生成.vue模版, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
+    <meta name="keywords" content="【04】Vue基础：v-text和v-html的使用, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta name="description" content="技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>VSCode初次写vue项目并一键生成.vue模版 | 干货小栈</title>
+    <title>【04】Vue基础：v-text和v-html的使用 | 干货小栈</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/awesome/css/all.css">
@@ -237,12 +237,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/custom/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">VSCode初次写vue项目并一键生成.vue模版</h1>
+                    <h1 class="description center-align post-title">【04】Vue基础：v-text和v-html的使用</h1>
                 </div>
             </div>
         </div>
@@ -359,8 +359,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vscode/">
-                                <span class="chip bg-color">VSCode</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">Vue2.0</span>
                             </a>
                         
                     </div>
@@ -371,8 +371,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/tool/" class="post-category">
-                                工具
+                            <a href="/categories/frontend/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -384,21 +384,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-18
+                    2020-10-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-18
+                    2020-10-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    386
+                    154
                 </div>
                 
 
@@ -415,93 +415,33 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="安装vscode"><a href="#安装vscode" class="headerlink" title="安装vscode"></a>安装vscode</h2><p>官网地址：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a></p>
-<h2 id="安装插件，识别vue文件"><a href="#安装插件，识别vue文件" class="headerlink" title="安装插件，识别vue文件"></a>安装插件，识别vue文件</h2><p>插件库中搜索<code>Vetur</code>，点击安装，安装完成之后点击重新加载。</p>
-<h2 id="新建代码片段"><a href="#新建代码片段" class="headerlink" title="新建代码片段"></a>新建代码片段</h2><p>文件–&gt;首选项–&gt;用户代码片段<br>然后再弹出的输入框中输入<code>vue</code>，然后回车(Enter)。<br>在<code>vue.json</code>中写上代码片段,代码如下：</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-    <span class="token property">"Print to console"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"vue"</span><span class="token punctuation">,</span>
-        <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-            <span class="token string">"&lt;!-- $1 -->"</span><span class="token punctuation">,</span>
-            <span class="token string">"&lt;template>"</span><span class="token punctuation">,</span>
-            <span class="token string">"   &lt;div class=\"$2\">$5&lt;/div>"</span><span class="token punctuation">,</span>
-            <span class="token string">"&lt;/template>"</span><span class="token punctuation">,</span>
-            <span class="token string">""</span><span class="token punctuation">,</span>
-            <span class="token string">"&lt;script>"</span><span class="token punctuation">,</span>
-            <span class="token string">"//这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）"</span><span class="token punctuation">,</span>
-            <span class="token string">"//例如：import 《组件名称》 from '《组件路径》';"</span><span class="token punctuation">,</span>
-            <span class="token string">""</span><span class="token punctuation">,</span>
-            <span class="token string">"export default {"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //import引入的组件需要注入到对象中才能使用"</span><span class="token punctuation">,</span>
-            <span class="token string">"   components: {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   data() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       //这里存放数据"</span><span class="token punctuation">,</span>
-            <span class="token string">"       return {"</span><span class="token punctuation">,</span>
-            <span class="token string">"           "</span><span class="token punctuation">,</span>
-            <span class="token string">"       };"</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //监听属性 类似于data概念"</span><span class="token punctuation">,</span>
-            <span class="token string">"   computed: {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //监控data中的数据变化"</span><span class="token punctuation">,</span>
-            <span class="token string">"   watch: {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //方法集合"</span><span class="token punctuation">,</span>
-            <span class="token string">"   methods: {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //生命周期 - 创建完成（可以访问当前this实例）"</span><span class="token punctuation">,</span>
-            <span class="token string">"   created() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //生命周期 - 挂载完成（可以访问DOM元素）"</span><span class="token punctuation">,</span>
-            <span class="token string">"   mounted() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //生命周期 - 创建之前"</span><span class="token punctuation">,</span>
-            <span class="token string">"   beforeCreate() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //生命周期 - 挂载之前"</span><span class="token punctuation">,</span>
-            <span class="token string">"   beforeMount() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //生命周期 - 更新之前"</span><span class="token punctuation">,</span>
-            <span class="token string">"   beforeUpdate() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //生命周期 - 更新之后"</span><span class="token punctuation">,</span>
-            <span class="token string">"   updated() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //生命周期 - 销毁之前"</span><span class="token punctuation">,</span>
-            <span class="token string">"   beforeDestroy() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //生命周期 - 销毁完成"</span><span class="token punctuation">,</span>
-            <span class="token string">"   destroyed() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"   //如果页面有keep-alive缓存功能，这个函数会触发"</span><span class="token punctuation">,</span>
-            <span class="token string">"   activated() {"</span><span class="token punctuation">,</span>
-            <span class="token string">"       "</span><span class="token punctuation">,</span>
-            <span class="token string">"   },"</span><span class="token punctuation">,</span>
-            <span class="token string">"}"</span><span class="token punctuation">,</span>
-            <span class="token string">"&lt;/script>"</span><span class="token punctuation">,</span>
-            <span class="token string">""</span><span class="token punctuation">,</span>
-            <span class="token string">"&lt;style lang='scss' scoped>"</span><span class="token punctuation">,</span>
-            <span class="token string">"//@import url($3); 引入公共css类"</span><span class="token punctuation">,</span>
-            <span class="token string">"$4"</span><span class="token punctuation">,</span>
-            <span class="token string">"&lt;/style>"</span>
-        <span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Log output to console"</span>
-    <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span></code></pre>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>上面代码中的 <code>&quot;prefix&quot;: &quot;vue&quot;</code>, 就是快捷键；保存好之后，新建.vue结尾的文件，输入 <code>vue</code> 按键盘的 <code>tab</code> 就行。</p>
+                <h2 id="v-text-的使用"><a href="#v-text-的使用" class="headerlink" title="v-text 的使用"></a>v-text 的使用</h2><p>模版写法：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>js写法：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            title<span class="token punctuation">:</span> <span class="token string">'v-text'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>在浏览器运行此文件，可以看到成功显示出<code>v-text</code>。</p>
+<h2 id="v-html-的使用"><a href="#v-html-的使用" class="headerlink" title="v-html 的使用"></a>v-html 的使用</h2><p>模版写法：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-html</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>js写法：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            title<span class="token punctuation">:</span> <span class="token string">'&lt;h1>v-html&lt;/h1>'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>在浏览器运行此文件，可以看到成功显示出<code>v-html</code>。</p>
+<blockquote>
+<p><strong>注意</strong>：生产环境中动态渲染<code>HTML</code>是非常危险的，容易导致<code>XSS</code>攻击。所以在使用<code>v-html</code>时，不要在用户提交或可操作的网页上使用。</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -527,7 +467,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.bestthink.top/categories/tool/83dcefb7.html">https://blog.bestthink.top/categories/tool/83dcefb7.html</a>
+                    <a href="https://blog.bestthink.top/categories/frontend/a15d25e1.html">https://blog.bestthink.top/categories/frontend/a15d25e1.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -565,8 +505,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vscode/">
-                                    <span class="chip bg-color">VSCode</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">Vue2.0</span>
                                 </a>
                             
                         </div>
@@ -738,23 +678,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/categories/frontend/1db87a14.html">
+                <a href="/categories/frontend/d65a1577.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/custom/1.jpg" class="responsive-img" alt="【01】Vue基础：前期准备">
+                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/custom/6.jpg" class="responsive-img" alt="【05】Vue基础：v-on的使用">
                         
-                        <span class="card-title">【01】Vue基础：前期准备</span>
+                        <span class="card-title">【05】Vue基础：v-on的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用Vue2.0前期准备工作。
+                            Vue使用v-on指令监听DOM事件，在开发过程中，可以将其绑定在DOM节点上，以此监听DOM事件来触发一些javascript代码。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-22
                         </span>
                         <span class="publish-author">
                             
@@ -786,24 +726,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/categories/frontend/84b12bae.html">
+                <a href="/categories/frontend/8d076785.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/custom/4.jpg" class="responsive-img" alt="特殊日子全站网页自动变灰">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/17.jpg" class="responsive-img" alt="微信小程序中使用阿里图标库iconfont">
-                        
-                        <span class="card-title">微信小程序中使用阿里图标库iconfont</span>
+                        <span class="card-title">特殊日子全站网页自动变灰</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            微信小程序中使用阿里图标库，减少图片的使用，提升性能。
+                            依赖js定期自动变灰。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-15
                             </span>
                         <span class="publish-author">
                             
@@ -820,8 +759,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mpminiprogram/">
-                        <span class="chip bg-color">微信小程序</span>
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">Javascript</span>
                     </a>
                     
                 </div>
