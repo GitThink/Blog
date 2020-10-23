@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初识update修改器, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
+    <meta name="keywords" content="【08】Vue基础：其他指令, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta name="description" content="技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>初识update修改器 | 干货小栈</title>
+    <title>【08】Vue基础：其他指令 | 干货小栈</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/awesome/css/all.css">
@@ -237,12 +237,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">初识update修改器</h1>
+                    <h1 class="description center-align post-title">【08】Vue基础：其他指令</h1>
                 </div>
             </div>
         </div>
@@ -359,8 +359,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/mongodb/">
-                                <span class="chip bg-color">MongoDB</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">Vue2.0</span>
                             </a>
                         
                     </div>
@@ -371,8 +371,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/database/" class="post-category">
-                                数据库
+                            <a href="/categories/frontend/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -384,21 +384,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-29
+                    2020-10-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2020-10-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    598
+                    501
                 </div>
                 
 
@@ -415,25 +415,91 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="set修改器"><a href="#set修改器" class="headerlink" title="$set修改器"></a>$set修改器</h2><p>用来修改一个指定的键值(key),这时候我们要修改上节课的sex和age就非常方便了，只要一句话就可以搞定。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"name"</span><span class="token keyword">:</span><span class="token string">"jspan"</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token string">"<span class="token variable">$set</span>"</span>:<span class="token punctuation">{</span>sex:2,age:21<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>修改好后，我们可以用db.workmate.find()来进行查看，你会发现数据已经被修改。</p>
-<h2 id="修改嵌套内容-内嵌文档"><a href="#修改嵌套内容-内嵌文档" class="headerlink" title="修改嵌套内容(内嵌文档)"></a>修改嵌套内容(内嵌文档)</h2><p>比如现在的UI的技能发生了变化，说她不会作PPT而是word作的很好，需要进行修改。这时候你会发现skill数据是内嵌的，这时候我们可以属性的形式进行修改，skill.skillThree。具体看下面的代码。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"name"</span><span class="token keyword">:</span><span class="token string">"jspan"</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token string">"<span class="token variable">$set</span>"</span>:<span class="token punctuation">{</span><span class="token string">"skill.skillThree"</span><span class="token keyword">:</span><span class="token string">'word'</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>这样就可以简单的修改内嵌文档了。</p>
-<h2 id="unset用于将key删除"><a href="#unset用于将key删除" class="headerlink" title="$unset用于将key删除"></a>$unset用于将key删除</h2><p>它的作用其实就是删除一个key值和键。一般女孩子都是不希望看到自己的年龄的，所以要求我们把年龄删除。这时候我们就可以使用$unset的形式。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"name"</span><span class="token keyword">:</span><span class="token string">"jspan"</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$unset</span>:<span class="token punctuation">{</span><span class="token string">"age"</span><span class="token keyword">:</span><span class="token string">''</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>当你删除后，想加回来可以直接用set进行添加。</p>
-<h2 id="inc对数字进行计算"><a href="#inc对数字进行计算" class="headerlink" title="$inc对数字进行计算"></a>$inc对数字进行计算</h2><p>它是对value值的修改，但是修改的必须是数字，字符串是不起效果的。我们现在要对jspan的年龄减去2岁，就可以直接用$inc来操作。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"name"</span><span class="token keyword">:</span><span class="token string">"jspan"</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$inc</span>:<span class="token punctuation">{</span><span class="token string">"age"</span>:-2<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<h2 id="multi选项"><a href="#multi选项" class="headerlink" title="multi选项"></a>multi选项</h2><p>现在领导说了，你要把每个人的爱好也加入进来，但是如果你直接写会只加一个，比如下面这种形式。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$set</span>:<span class="token punctuation">{</span>interset:<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>这时候你用db.workmate.find()查找，你会发现只改变了第一个数据，其他两条没有改变。这时候我们想改变就要用到multi选项。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$set</span>:<span class="token punctuation">{</span>interset:<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span>multi:true<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>这时候每个数据都发生了改变，multi是有ture和false两个值，true代表全部修改，false代表只修改一个(默认值)。</p>
-<h2 id="upsert选项"><a href="#upsert选项" class="headerlink" title="upsert选项"></a>upsert选项</h2><p>upsert是在找不到值的情况下，直接插入这条数据。比如我们这时候又来了一个新同事zhangsan，我们这时候修改他的信息，age设置成20岁，但集合中并没有这条数据。这时候可以使用upsert选项直接添加。</p>
-<pre class=" language-bash"><code class="language-bash">db.workmate.update<span class="token punctuation">(</span><span class="token punctuation">{</span>name:<span class="token string">'zhangsan'</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token variable">$set</span>:<span class="token punctuation">{</span>age:20<span class="token punctuation">}</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span>upsert:true<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>upsert也有两个值：true代表没有就添加，false代表没有不添加(默认值)。</p>
+                <h2 id="v-once-指令"><a href="#v-once-指令" class="headerlink" title="v-once 指令"></a>v-once 指令</h2><p>只渲染元素和组件一次，随后的重新渲染，元素/组件及其所有的子节点将被视为静态内容并跳过。<br>示例：</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>v-once<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue@2.6.11<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-once</span><span class="token punctuation">></span></span>{{ msg }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>msg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
+            <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+                <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                        msg<span class="token punctuation">:</span> <span class="token number">123</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>在浏览器中运行代码时可以发现，在文本框中输入内容时，<code>div</code>元素中的内容并没有跟着改变，这是因为在浏览器运行时，DOM元素已经渲染完成了。</p>
+<h2 id="v-pre-指令"><a href="#v-pre-指令" class="headerlink" title="v-pre 指令"></a>v-pre 指令</h2><p>跳过这个元素和它的子元素的编译过程。可以用来显示原始 <code>Mustache</code> 标签。跳过大量没有指令的节点会加快编译。<br>示例：</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>v-pre<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue@2.6.11<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-pre</span><span class="token punctuation">></span></span>{{ msg }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
+            <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+                <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                        msg<span class="token punctuation">:</span> <span class="token number">123</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>在浏览器中运行代码时可以看到，页面显示的内容为<code></code>。</p>
+<h2 id="v-cloak-指令"><a href="#v-cloak-指令" class="headerlink" title="v-cloak 指令"></a>v-cloak 指令</h2><p>这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 <code>[v-cloak] { display: none }</code> 一起用时，这个指令可以隐藏未编译的 <code>Mustache</code> 标签直到实例准备完毕。<br>css写法：</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token attribute">[v-cloak]</span> </span><span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>示例：</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>v-cloak<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
+            <span class="token selector"><span class="token attribute">[v-cloak]</span> </span><span class="token punctuation">{</span>
+                <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue@2.6.11<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-cloak</span><span class="token punctuation">></span></span>{{ msg }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
+            <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+                <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                        msg<span class="token punctuation">:</span> <span class="token number">123</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p><code>&lt;div v-cloak&gt;&lt;/div&gt;</code>里的内容不会显示，直到编译结束后才会进行显示。</p>
 
             </div>
             <hr/>
@@ -459,7 +525,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.bestthink.top/categories/database/1db87a14.html">https://blog.bestthink.top/categories/database/1db87a14.html</a>
+                    <a href="https://blog.bestthink.top/categories/frontend/a630e1f8.html">https://blog.bestthink.top/categories/frontend/a630e1f8.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -497,8 +563,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/mongodb/">
-                                    <span class="chip bg-color">MongoDB</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">Vue2.0</span>
                                 </a>
                             
                         </div>
@@ -670,31 +736,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/categories/database/6abf4a82.html">
+                <a href="/categories/frontend/d137d16e.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/16.jpg" class="responsive-img" alt="update数组修改器">
+                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/16.jpg" class="responsive-img" alt="【09】Vue基础：组件">
                         
-                        <span class="card-title">update数组修改器</span>
+                        <span class="card-title">【09】Vue基础：组件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            修改对象形式的数据。
+                            在Vue中，组件是一个很强大的功能，组件可以扩展HTML元素，封装可重用的代码。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/database/" class="post-category">
-                                    数据库
+                            <a href="/categories/frontend/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -704,8 +770,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mongodb/">
-                        <span class="chip bg-color">MongoDB</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">Vue2.0</span>
                     </a>
                     
                 </div>
@@ -719,31 +785,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/categories/database/84b12bae.html">
+                <a href="/categories/frontend/55c41a85.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/custom/8.jpg" class="responsive-img" alt="【07】Vue基础：v-bind的使用">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/0.jpg" class="responsive-img" alt="update常见错误">
-                        
-                        <span class="card-title">update常见错误</span>
+                        <span class="card-title">【07】Vue基础：v-bind的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            update的详细操作和常见错误，以及解决方案。
+                            v-bind 用于处理 HTML 中的标签属性。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/database/" class="post-category">
-                                    数据库
+                            <a href="/categories/frontend/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -753,8 +818,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mongodb/">
-                        <span class="chip bg-color">MongoDB</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">Vue2.0</span>
                     </a>
                     
                 </div>
