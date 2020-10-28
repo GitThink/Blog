@@ -437,13 +437,13 @@
     <link href="https://blog.bestthink.top/categories/frontend/83dcefb7.html"/>
     <id>https://blog.bestthink.top/categories/frontend/83dcefb7.html</id>
     <published>2020-07-14T02:50:41.000Z</published>
-    <updated>2020-08-03T01:22:21.539Z</updated>
+    <updated>2020-10-28T03:34:55.544Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;分类方法&quot;&gt;&lt;a href=&quot;#分类方法&quot; class=&quot;headerlink&quot; title=&quot;分类方法&quot;&gt;&lt;/a&gt;分类方法&lt;/h2&gt;&lt;h3 id=&quot;CSS文件的分类和引用顺序&quot;&gt;&lt;a href=&quot;#CSS文件的分类和引用顺序&quot; class=&quot;headerlink&quot; title=&quot;CSS文件的分类和引用顺序&quot;&gt;&lt;/a&gt;CSS文件的分类和引用顺序&lt;/h3&gt;&lt;p&gt;通常，一个项目我们只引用一个CSS，但是对于较大的项目，我们需要把CSS文件进行分类。&lt;br&gt;我们按照CSS的性质和用途，将CSS文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。&lt;br&gt;1.公共型样式：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局”、“通用模块和其扩展”、“元件和其扩展”、“功能类样式”、“皮肤类样式”。&lt;br&gt;2.特殊型样式：当某个栏目或页面的样式与网站整体差异较大或者维护率较高时，可以独立引用一个样式：“特殊的布局、模块和元件及扩展”、“特殊的功能、颜色和背景”，也可以是某个大型控件或模块的独立样式。&lt;br&gt;3.皮肤型样式：如果产品需要换肤功能，那么我们需要将颜色、背景等抽离出来放在这里。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;link href=&amp;quot;assets/css/global.css&amp;quot; /&amp;gt;
-&amp;lt;link href=&amp;quot;assets/css/index.css&amp;quot; /&amp;gt;
+      &lt;h2 id=&quot;分类方法&quot;&gt;&lt;a href=&quot;#分类方法&quot; class=&quot;headerlink&quot; title=&quot;分类方法&quot;&gt;&lt;/a&gt;分类方法&lt;/h2&gt;&lt;h3 id=&quot;CSS文件的分类和引用顺序&quot;&gt;&lt;a href=&quot;#CSS文件的分类和引用顺序&quot; class=&quot;headerlink&quot; title=&quot;CSS文件的分类和引用顺序&quot;&gt;&lt;/a&gt;CSS文件的分类和引用顺序&lt;/h3&gt;&lt;p&gt;通常，一个项目我们只引用一个&lt;code&gt;CSS&lt;/code&gt;，但是对于较大的项目，我们需要把&lt;code&gt;CSS&lt;/code&gt;文件进行分类。&lt;br&gt;我们按照&lt;code&gt;CSS&lt;/code&gt;的性质和用途，将&lt;code&gt;CSS&lt;/code&gt;文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。&lt;br&gt;1.公共型样式：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局”、“通用模块和其扩展”、“元件和其扩展”、“功能类样式”、“皮肤类样式”。&lt;br&gt;2.特殊型样式：当某个栏目或页面的样式与网站整体差异较大或者维护率较高时，可以独立引用一个样式：“特殊的布局、模块和元件及扩展”、“特殊的功能、颜色和背景”，也可以是某个大型控件或模块的独立样式。&lt;br&gt;3.皮肤型样式：如果产品需要换肤功能，那么我们需要将颜色、背景等抽离出来放在这里。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;link href=&amp;quot;assets/css/public.css&amp;quot; /&amp;gt;
+&amp;lt;link href=&amp;quot;assets/css/home.css&amp;quot; /&amp;gt;
 &amp;lt;link href=&amp;quot;assets/css/skin.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
