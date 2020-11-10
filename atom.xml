@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.bestthink.top/"/>
-  <updated>2020-10-23T02:57:56.950Z</updated>
+  <updated>2020-11-10T03:04:45.655Z</updated>
   <id>https://blog.bestthink.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySql学习笔记</title>
+    <link href="https://blog.bestthink.top/categories/database/d8819d45.html"/>
+    <id>https://blog.bestthink.top/categories/database/d8819d45.html</id>
+    <published>2020-11-10T01:22:37.000Z</published>
+    <updated>2020-11-10T03:04:45.655Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;MySQL-的连接&quot;&gt;&lt;a href=&quot;#MySQL-的连接&quot; class=&quot;headerlink&quot; title=&quot;MySQL 的连接&quot;&gt;&lt;/a&gt;MySQL 的连接&lt;/h2&gt;&lt;h3 id=&quot;启动服务&quot;&gt;&lt;a href=&quot;#启动服务&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://blog.bestthink.top/categories/database/"/>
+    
+    
+      <category term="MySql" scheme="https://blog.bestthink.top/tags/MySql/"/>
+    
+  </entry>
   
   <entry>
     <title>【11】Vue基础：混入和过滤器</title>
@@ -526,33 +553,6 @@
         
         
           &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="https://blog.bestthink.top/categories/database/"/>
-    
-    
-      <category term="MongoDB" scheme="https://blog.bestthink.top/tags/mongodb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>复合索引</title>
-    <link href="https://blog.bestthink.top/categories/database/483e80d4.html"/>
-    <id>https://blog.bestthink.top/categories/database/483e80d4.html</id>
-    <published>2019-05-29T07:54:20.000Z</published>
-    <updated>2020-07-14T03:43:19.845Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;索引中的小坑&quot;&gt;&lt;a href=&quot;#索引中的小坑&quot; class=&quot;headerlink&quot;
         
       
     
