@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.bestthink.top/"/>
-  <updated>2020-11-10T03:04:45.655Z</updated>
+  <updated>2021-06-09T06:35:30.207Z</updated>
   <id>https://blog.bestthink.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序封装request请求</title>
+    <link href="https://blog.bestthink.top/categories/frontend/af86add3.html"/>
+    <id>https://blog.bestthink.top/categories/frontend/af86add3.html</id>
+    <published>2021-06-09T06:03:42.000Z</published>
+    <updated>2021-06-09T06:35:30.207Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+    
+    
+      <category term="微信小程序" scheme="https://blog.bestthink.top/tags/mpminiprogram/"/>
+    
+  </entry>
   
   <entry>
     <title>MySql学习笔记</title>
@@ -526,33 +553,6 @@
         
         
           &lt;h2 id=&quot;创建用户&quot;&gt;&lt;a href=&quot;#创建用户&quot; class=&quot;headerlink&quot; title=&quot;创建用户&quot;&gt;&lt;/a&gt;创建用户&lt;/h2&gt;&lt;p&gt;首先要进入我们的admin库中，进入方法是直接使用use admin 就可以。进入后可以使用show
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="https://blog.bestthink.top/categories/database/"/>
-    
-    
-      <category term="MongoDB" scheme="https://blog.bestthink.top/tags/mongodb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>全文索引</title>
-    <link href="https://blog.bestthink.top/categories/database/3f39b042.html"/>
-    <id>https://blog.bestthink.top/categories/database/3f39b042.html</id>
-    <published>2019-05-30T01:57:05.000Z</published>
-    <updated>2020-07-14T03:44:59.637Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot;
         
       
     

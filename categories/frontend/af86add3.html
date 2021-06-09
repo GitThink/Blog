@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="用户的创建、删除与修改, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
+    <meta name="keywords" content="微信小程序封装request请求, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta name="description" content="技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>用户的创建、删除与修改 | 干货小栈</title>
+    <title>微信小程序封装request请求 | 干货小栈</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/libs/awesome/css/all.css">
@@ -237,12 +237,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/custom/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">用户的创建、删除与修改</h1>
+                    <h1 class="description center-align post-title">微信小程序封装request请求</h1>
                 </div>
             </div>
         </div>
@@ -359,8 +359,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/mongodb/">
-                                <span class="chip bg-color">MongoDB</span>
+                            <a href="/tags/mpminiprogram/">
+                                <span class="chip bg-color">微信小程序</span>
                             </a>
                         
                     </div>
@@ -371,8 +371,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/database/" class="post-category">
-                                数据库
+                            <a href="/categories/frontend/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -384,21 +384,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-03
+                    2021-06-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2021-06-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    522
+                    549
                 </div>
                 
 
@@ -415,48 +415,112 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>首先要进入我们的admin库中，进入方法是直接使用use admin 就可以。进入后可以使用show collections来查看数据库中的集合。默认是只有一个集合的（system.version）。<br>创建用户可以用db.createUser方法来完成</p>
-<pre class=" language-js"><code class="language-js">db<span class="token punctuation">.</span><span class="token function">createUser</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    user<span class="token punctuation">:</span><span class="token string">"panpan"</span><span class="token punctuation">,</span>
-    pwd<span class="token punctuation">:</span><span class="token string">"123456"</span><span class="token punctuation">,</span>
-    customData<span class="token punctuation">:</span><span class="token punctuation">{</span>
-        name<span class="token punctuation">:</span><span class="token string">'潘潘'</span><span class="token punctuation">,</span>
-        email<span class="token punctuation">:</span><span class="token string">'211695630@qq.com'</span><span class="token punctuation">,</span>
-        age<span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">,</span>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在小程序(其他)开发过程中，我们会遇到很多请求，如果每次都去写一遍。尤其是同一个接口好几个地方都要使用，有一点变动就需要全部找出来一个一个改，很不方便维护。所以我们就封装一下,统一管理吧~</p>
+<pre class=" language-javascript"><code class="language-javascript">wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    url<span class="token punctuation">:</span> <span class="token string">'test.php'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 仅为示例，并非真实的接口地址</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        x<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        y<span class="token punctuation">:</span> <span class="token string">''</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    roles<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'read'</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>当然我们还可以单独配置一个数据库的权限，比如我们现在要配置compay数据库的权限为读写：</p>
-<pre class=" language-js"><code class="language-js">db<span class="token punctuation">.</span><span class="token function">createUser</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    user<span class="token punctuation">:</span><span class="token string">"panpan"</span><span class="token punctuation">,</span>
-    pwd<span class="token punctuation">:</span><span class="token string">"123456"</span><span class="token punctuation">,</span>
-    customData<span class="token punctuation">:</span><span class="token punctuation">{</span>
-        name<span class="token punctuation">:</span><span class="token string">'潘潘'</span><span class="token punctuation">,</span>
-        email<span class="token punctuation">:</span><span class="token string">'211695630@qq.com'</span><span class="token punctuation">,</span>
-        age<span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">,</span>
+    header<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'content-type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span> <span class="token comment" spellcheck="true">// 默认值</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    roles<span class="token punctuation">:</span><span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-            role<span class="token punctuation">:</span><span class="token string">"readWrite"</span><span class="token punctuation">,</span>
-            db<span class="token punctuation">:</span><span class="token string">"company"</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token string">'read'</span>
-    <span class="token punctuation">]</span>
+    <span class="token function">success</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">fail</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>内置角色：<br>数据库用户角色：read、readWrite；<br>数据库管理角色：dbAdmin、dbOwner、userAdmin;<br>集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManage；<br>备份恢复角色：backup、restore；<br>所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase<br>超级用户角色：root<br>内部角色：__system</p>
-<h2 id="查找用户信息"><a href="#查找用户信息" class="headerlink" title="查找用户信息"></a>查找用户信息</h2><p>我们直接可以使用查找的方法，查找用户信息。命令很简单：</p>
-<pre class=" language-bash"><code class="language-bash">db.system.users.find<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>删除用户也是非常简单，直接用remove就可以删除这个用户的信息和权限。</p>
-<pre class=" language-bash"><code class="language-bash">db.system.users.remove<span class="token punctuation">(</span><span class="token punctuation">{</span>user:<span class="token string">"panpan"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<h2 id="建权"><a href="#建权" class="headerlink" title="建权"></a>建权</h2><p>有时候我们要验证用户的用户名密码是否正确，就需要用到MongoDB提供的建权操作。也算是一种登录操作，不过MongoDB把这叫做建权。</p>
-<pre class=" language-bash"><code class="language-bash">db.auth<span class="token punctuation">(</span><span class="token string">"panpan"</span>,<span class="token string">"123456"</span><span class="token punctuation">)</span></code></pre>
-<p>如果正确返回1，如果错误返回0。（Error：Authentication failed。）</p>
-<h2 id="启动建权"><a href="#启动建权" class="headerlink" title="启动建权"></a>启动建权</h2><p>重启MongoDB服务器，然后设置必须使用建权登录。</p>
-<pre class=" language-bash"><code class="language-bash">mongod --auth</code></pre>
-<p>启动后，用户登录只能用用户名和密码进行登录，原来的mongo形式连接已经不起作用了。相应的用户权限也对应妥当。实际项目中我们启动服务器必须使用建权形式。</p>
-<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><p>如果在配置用户之后，用户想登录，可以使用mongo的形式，不过需要配置用户名密码：</p>
-<pre class=" language-bash"><code class="language-bash">mongo -u panpan -p 123456 127.0.0.1:27017/admin</code></pre>
-<p>这时候我们就可以用给我们的权限对数据库操作了。</p>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>1、url（请求地址）<br>一般<code>url</code>都是有一个固定前缀（域名），只是后面不同。<br>例如：</p>
+<pre class=" language-txt"><code class="language-txt">https://domain.com/api/test1
+https://domain.com/api/test2
+https://domain.com/api/test3
+https://domain.com/api/test4
+...</code></pre>
+<p>所以我们在小程序跟目录下新建<code>config.js</code>，设置一个全局常量<code>apiURL</code>用来存储前缀。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
+    apiURL<span class="token punctuation">:</span> <span class="token string">'https://domain.com/api'</span>
+<span class="token punctuation">}</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> config</code></pre>
+<p>2、method（HTTP 请求方法）</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> GET <span class="token operator">=</span> <span class="token string">'GET'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> POST <span class="token operator">=</span> <span class="token string">'POST'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> PUT <span class="token operator">=</span> <span class="token string">'PUT'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> FORM <span class="token operator">=</span> <span class="token string">'FORM'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> DELETE <span class="token operator">=</span> <span class="token string">'DELETE'</span><span class="token punctuation">;</span></code></pre>
+<p>3、header（请求header）<br><code>header</code>的话根据<code>method</code>设置就行了，默认。</p>
+<pre class=" language-javascript"><code class="language-javascript">header <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'content-type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>4、data（参数）<br><code>get</code>请求直接传就可以了<br><code>post</code>请求<code>JSON.stringify(data)</code>一下</p>
+<p>5、在小程序<code>util</code>文件夹下新建<code>request.js</code>，并将下面代码放进去。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> $config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../config'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> baseURL <span class="token operator">=</span> $config<span class="token punctuation">.</span>apiURL<span class="token punctuation">;</span>
+<span class="token keyword">const</span> Request <span class="token operator">=</span> <span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> header <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'content-type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            url<span class="token punctuation">:</span> baseURL <span class="token operator">+</span> url<span class="token punctuation">,</span>
+            method<span class="token punctuation">:</span> method<span class="token punctuation">,</span>
+            data<span class="token punctuation">:</span> method <span class="token operator">===</span> <span class="token string">'POST'</span> <span class="token operator">?</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">:</span> data<span class="token punctuation">,</span>
+            header<span class="token punctuation">:</span> header<span class="token punctuation">,</span>
+            <span class="token function">success</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//请求成功</span>
+                <span class="token comment" spellcheck="true">//判断状态码---errCode状态根据后端定义来判断</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//其他异常</span>
+                    <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'运行时错误,请稍后再试'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">fail</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//请求失败</span>
+                <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Request</code></pre>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>1、在小程序<code>util</code>文件夹下新建<code>api.js</code>，并将下面代码放进去，然后创建请求，并导出。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> $request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> GET <span class="token operator">=</span> <span class="token string">'GET'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> POST <span class="token operator">=</span> <span class="token string">'POST'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> PUT <span class="token operator">=</span> <span class="token string">'PUT'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> FORM <span class="token operator">=</span> <span class="token string">'FORM'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> DELETE <span class="token operator">=</span> <span class="token string">'DELETE'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Api <span class="token operator">=</span> <span class="token punctuation">{</span>
+    getList<span class="token punctuation">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">$request</span><span class="token punctuation">(</span>GET<span class="token punctuation">,</span> <span class="token string">'/getList'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//获取列表数据</span>
+    getDeatil<span class="token punctuation">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">$request</span><span class="token punctuation">(</span>GET<span class="token punctuation">,</span> <span class="token string">'/getDetail'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//获取详情数据</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Api</code></pre>
+<p>2、这里我们以获取列表数据接口为例，在<code>.js</code>文件里引入<code>api.js</code></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> $api <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../utils/api.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    onLoad<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> sendData <span class="token operator">=</span> <span class="token punctuation">{</span>
+            siteId<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            page<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            pageSize<span class="token punctuation">:</span> <span class="token number">20</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        $api<span class="token punctuation">.</span><span class="token function">getList</span><span class="token punctuation">(</span>sendData<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//请求成功</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//请求失败</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
             </div>
             <hr/>
@@ -482,7 +546,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.bestthink.top/categories/database/af86add3.html">https://blog.bestthink.top/categories/database/af86add3.html</a>
+                    <a href="https://blog.bestthink.top/categories/frontend/af86add3.html">https://blog.bestthink.top/categories/frontend/af86add3.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -520,8 +584,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/mongodb/">
-                                    <span class="chip bg-color">MongoDB</span>
+                                <a href="/tags/mpminiprogram/">
+                                    <span class="chip bg-color">微信小程序</span>
                                 </a>
                             
                         </div>
@@ -689,29 +753,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/categories/frontend/6dd28e9b.html">
+                <a href="/categories/frontend/af86add3.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/custom/10.jpg" class="responsive-img" alt="微信小程序封装request请求">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/10.jpg" class="responsive-img" alt="Bootstrap3网格系统兼容IE7">
-                        
-                        <span class="card-title">Bootstrap3网格系统兼容IE7</span>
+                        <span class="card-title">微信小程序封装request请求</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Bootstrap3网格系统浏览器兼容性解决方案。
+                            封装request请求，使代码更加优雅。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-09-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -724,15 +788,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">CSS</span>
-                    </a>
-                    
-                    <a href="/tags/bootstrap/">
-                        <span class="chip bg-color">Bootstrap</span>
+                    <a href="/tags/mpminiprogram/">
+                        <span class="chip bg-color">微信小程序</span>
                     </a>
                     
                 </div>
@@ -746,24 +807,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/categories/database/3f39b042.html">
+                <a href="/categories/database/d8819d45.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/custom/9.jpg" class="responsive-img" alt="MySql学习笔记">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/GitThink/gitthink.github.io@master/medias/featureimages/18.jpg" class="responsive-img" alt="全文索引">
-                        
-                        <span class="card-title">全文索引</span>
+                        <span class="card-title">MySql学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            有些时候需要在大篇幅的文章中搜索关键词，比如我写的文章每篇都在万字以上，这时候你想搜索关键字是非常不容易的，MongoDB为我们提供了全文索引。
+                            MySql学习笔记。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-10
                             </span>
                         <span class="publish-author">
                             
@@ -780,8 +840,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mongodb/">
-                        <span class="chip bg-color">MongoDB</span>
+                    <a href="/tags/MySql/">
+                        <span class="chip bg-color">MySql</span>
                     </a>
                     
                 </div>
