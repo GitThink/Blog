@@ -391,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-09
+                    2021-06-15
                 </div>
                 
 
@@ -415,7 +415,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在小程序(其他)开发过程中，我们会遇到很多请求，如果每次都去写一遍。尤其是同一个接口好几个地方都要使用，有一点变动就需要全部找出来一个一个改，很不方便维护。所以我们就封装一下,统一管理吧~</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在小程序（其他）开发过程中，我们会遇到很多请求，如果每次都去写一遍。尤其是同一个接口好几个地方都要使用，有一点变动就需要全部找出来一个一个改，很不方便维护。所以我们就封装一下，统一管理吧~</p>
 <pre class=" language-javascript"><code class="language-javascript">wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     url<span class="token punctuation">:</span> <span class="token string">'test.php'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 仅为示例，并非真实的接口地址</span>
     data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
@@ -438,7 +438,7 @@ https://domain.com/api/test2
 https://domain.com/api/test3
 https://domain.com/api/test4
 ...</code></pre>
-<p>所以我们在小程序跟目录下新建<code>config.js</code>，设置一个全局常量<code>apiURL</code>用来存储前缀。</p>
+<p>所以我们在小程序根目录下新建<code>config.js</code>，设置一个全局常量<code>apiURL</code>用来存储前缀。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
     apiURL<span class="token punctuation">:</span> <span class="token string">'https://domain.com/api'</span>
 <span class="token punctuation">}</span>
