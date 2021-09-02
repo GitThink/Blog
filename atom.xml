@@ -5,9 +5,9 @@
   <subtitle>技术潘</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://blog.bestthink.top/"/>
+  <link href="https://blog.vipz.top/"/>
   <updated>2021-06-28T03:23:14.232Z</updated>
-  <id>https://blog.bestthink.top/</id>
+  <id>https://blog.vipz.top/</id>
   
   <author>
     <name>技术潘</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>axios在vue-cli项目中的封装使用</title>
-    <link href="https://blog.bestthink.top/categories/frontend/d8819d45.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/d8819d45.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/d8819d45.html"/>
+    <id>https://blog.vipz.top/categories/frontend/d8819d45.html</id>
     <published>2021-06-28T02:48:20.000Z</published>
     <updated>2021-06-28T03:23:14.232Z</updated>
     
@@ -37,17 +37,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序封装request请求</title>
-    <link href="https://blog.bestthink.top/categories/frontend/af86add3.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/af86add3.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/af86add3.html"/>
+    <id>https://blog.vipz.top/categories/frontend/af86add3.html</id>
     <published>2021-06-09T06:03:42.000Z</published>
     <updated>2021-06-28T02:50:33.049Z</updated>
     
@@ -64,17 +64,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="微信小程序" scheme="https://blog.bestthink.top/tags/mpminiprogram/"/>
+      <category term="微信小程序" scheme="https://blog.vipz.top/tags/mpminiprogram/"/>
     
   </entry>
   
   <entry>
     <title>MySql学习笔记</title>
-    <link href="https://blog.bestthink.top/categories/database/d8819d45.html"/>
-    <id>https://blog.bestthink.top/categories/database/d8819d45.html</id>
+    <link href="https://blog.vipz.top/categories/database/d8819d45.html"/>
+    <id>https://blog.vipz.top/categories/database/d8819d45.html</id>
     <published>2020-11-10T01:22:37.000Z</published>
     <updated>2020-11-10T03:04:45.655Z</updated>
     
@@ -91,17 +91,17 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://blog.bestthink.top/categories/database/"/>
+      <category term="数据库" scheme="https://blog.vipz.top/categories/database/"/>
     
     
-      <category term="MySql" scheme="https://blog.bestthink.top/tags/MySql/"/>
+      <category term="MySql" scheme="https://blog.vipz.top/tags/MySql/"/>
     
   </entry>
   
   <entry>
     <title>【11】Vue基础：混入和过滤器</title>
-    <link href="https://blog.bestthink.top/categories/frontend/3f39b042.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/3f39b042.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/3f39b042.html"/>
+    <id>https://blog.vipz.top/categories/frontend/3f39b042.html</id>
     <published>2020-10-23T02:54:53.000Z</published>
     <updated>2020-10-23T02:57:56.950Z</updated>
     
@@ -118,17 +118,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>【10】Vue基础：将原生事件绑定到组件</title>
-    <link href="https://blog.bestthink.top/categories/frontend/483e80d4.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/483e80d4.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/483e80d4.html"/>
+    <id>https://blog.vipz.top/categories/frontend/483e80d4.html</id>
     <published>2020-10-23T02:49:03.000Z</published>
     <updated>2020-10-23T02:53:50.119Z</updated>
     
@@ -145,17 +145,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>【09】Vue基础：组件</title>
-    <link href="https://blog.bestthink.top/categories/frontend/d137d16e.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/d137d16e.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/d137d16e.html"/>
+    <id>https://blog.vipz.top/categories/frontend/d137d16e.html</id>
     <published>2020-10-23T02:34:18.000Z</published>
     <updated>2020-10-23T02:47:56.025Z</updated>
     
@@ -172,17 +172,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>【08】Vue基础：其他指令</title>
-    <link href="https://blog.bestthink.top/categories/frontend/a630e1f8.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/a630e1f8.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/a630e1f8.html"/>
+    <id>https://blog.vipz.top/categories/frontend/a630e1f8.html</id>
     <published>2020-10-23T02:25:05.000Z</published>
     <updated>2020-10-23T02:32:39.694Z</updated>
     
@@ -199,17 +199,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>【07】Vue基础：v-bind的使用</title>
-    <link href="https://blog.bestthink.top/categories/frontend/55c41a85.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/55c41a85.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/55c41a85.html"/>
+    <id>https://blog.vipz.top/categories/frontend/55c41a85.html</id>
     <published>2020-10-22T06:45:13.000Z</published>
     <updated>2020-10-22T06:50:06.945Z</updated>
     
@@ -227,17 +227,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>【06】Vue基础：v-model的使用</title>
-    <link href="https://blog.bestthink.top/categories/frontend/d74debda.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/d74debda.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/d74debda.html"/>
+    <id>https://blog.vipz.top/categories/frontend/d74debda.html</id>
     <published>2020-10-22T06:37:55.000Z</published>
     <updated>2020-10-22T06:42:29.252Z</updated>
     
@@ -255,17 +255,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>【05】Vue基础：v-on的使用</title>
-    <link href="https://blog.bestthink.top/categories/frontend/d65a1577.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/d65a1577.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/d65a1577.html"/>
+    <id>https://blog.vipz.top/categories/frontend/d65a1577.html</id>
     <published>2020-10-22T06:26:51.000Z</published>
     <updated>2020-10-22T06:36:49.832Z</updated>
     
@@ -283,17 +283,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>【04】Vue基础：v-text和v-html的使用</title>
-    <link href="https://blog.bestthink.top/categories/frontend/a15d25e1.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/a15d25e1.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/a15d25e1.html"/>
+    <id>https://blog.vipz.top/categories/frontend/a15d25e1.html</id>
     <published>2020-10-22T06:16:12.000Z</published>
     <updated>2020-10-22T06:25:54.906Z</updated>
     
@@ -311,17 +311,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>特殊日子全站网页自动变灰</title>
-    <link href="https://blog.bestthink.top/categories/frontend/8d076785.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/8d076785.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/8d076785.html"/>
+    <id>https://blog.vipz.top/categories/frontend/8d076785.html</id>
     <published>2020-10-15T05:52:03.000Z</published>
     <updated>2020-10-22T06:52:06.951Z</updated>
     
@@ -339,19 +339,19 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="CSS" scheme="https://blog.bestthink.top/tags/css/"/>
+      <category term="CSS" scheme="https://blog.vipz.top/tags/css/"/>
     
-      <category term="Javascript" scheme="https://blog.bestthink.top/tags/javascript/"/>
+      <category term="Javascript" scheme="https://blog.vipz.top/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>【03】Vue基础：v-for的使用</title>
-    <link href="https://blog.bestthink.top/categories/frontend/fa005713.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/fa005713.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/fa005713.html"/>
+    <id>https://blog.vipz.top/categories/frontend/fa005713.html</id>
     <published>2020-09-21T02:16:46.000Z</published>
     <updated>2020-09-21T02:27:54.975Z</updated>
     
@@ -368,17 +368,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>【02】Vue基础：v-if和v-show的使用</title>
-    <link href="https://blog.bestthink.top/categories/frontend/6abf4a82.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/6abf4a82.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/6abf4a82.html"/>
+    <id>https://blog.vipz.top/categories/frontend/6abf4a82.html</id>
     <published>2020-09-21T01:55:53.000Z</published>
     <updated>2020-09-21T02:10:12.337Z</updated>
     
@@ -396,17 +396,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>【01】Vue基础：前期准备</title>
-    <link href="https://blog.bestthink.top/categories/frontend/1db87a14.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/1db87a14.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/1db87a14.html"/>
+    <id>https://blog.vipz.top/categories/frontend/1db87a14.html</id>
     <published>2020-09-21T01:21:28.000Z</published>
     <updated>2020-09-21T01:54:45.622Z</updated>
     
@@ -424,17 +424,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="Vue2.0" scheme="https://blog.bestthink.top/tags/vue/"/>
+      <category term="Vue2.0" scheme="https://blog.vipz.top/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>VSCode初次写vue项目并一键生成.vue模版</title>
-    <link href="https://blog.bestthink.top/categories/tool/83dcefb7.html"/>
-    <id>https://blog.bestthink.top/categories/tool/83dcefb7.html</id>
+    <link href="https://blog.vipz.top/categories/tool/83dcefb7.html"/>
+    <id>https://blog.vipz.top/categories/tool/83dcefb7.html</id>
     <published>2020-09-18T02:56:54.000Z</published>
     <updated>2020-09-18T03:25:44.251Z</updated>
     
@@ -451,17 +451,17 @@
     </summary>
     
     
-      <category term="工具" scheme="https://blog.bestthink.top/categories/tool/"/>
+      <category term="工具" scheme="https://blog.vipz.top/categories/tool/"/>
     
     
-      <category term="VSCode" scheme="https://blog.bestthink.top/tags/vscode/"/>
+      <category term="VSCode" scheme="https://blog.vipz.top/tags/vscode/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序中使用阿里图标库iconfont</title>
-    <link href="https://blog.bestthink.top/categories/frontend/84b12bae.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/84b12bae.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/84b12bae.html"/>
+    <id>https://blog.vipz.top/categories/frontend/84b12bae.html</id>
     <published>2020-08-12T02:02:00.000Z</published>
     <updated>2020-09-18T02:58:09.770Z</updated>
     
@@ -478,17 +478,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="微信小程序" scheme="https://blog.bestthink.top/tags/mpminiprogram/"/>
+      <category term="微信小程序" scheme="https://blog.vipz.top/tags/mpminiprogram/"/>
     
   </entry>
   
   <entry>
     <title>CSS + JS 网站变灰（变黑白）</title>
-    <link href="https://blog.bestthink.top/categories/frontend/f3b61b38.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/f3b61b38.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/f3b61b38.html"/>
+    <id>https://blog.vipz.top/categories/frontend/f3b61b38.html</id>
     <published>2020-07-28T03:19:33.000Z</published>
     <updated>2020-10-15T05:56:11.434Z</updated>
     
@@ -505,19 +505,19 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="CSS" scheme="https://blog.bestthink.top/tags/css/"/>
+      <category term="CSS" scheme="https://blog.vipz.top/tags/css/"/>
     
-      <category term="Javascript" scheme="https://blog.bestthink.top/tags/javascript/"/>
+      <category term="Javascript" scheme="https://blog.vipz.top/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>CSS规范</title>
-    <link href="https://blog.bestthink.top/categories/frontend/83dcefb7.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/83dcefb7.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/83dcefb7.html"/>
+    <id>https://blog.vipz.top/categories/frontend/83dcefb7.html</id>
     <published>2020-07-14T02:50:41.000Z</published>
     <updated>2020-10-28T03:34:55.544Z</updated>
     
@@ -531,17 +531,17 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="CSS" scheme="https://blog.bestthink.top/tags/css/"/>
+      <category term="CSS" scheme="https://blog.vipz.top/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>Bootstrap3网格系统兼容IE7</title>
-    <link href="https://blog.bestthink.top/categories/frontend/6dd28e9b.html"/>
-    <id>https://blog.bestthink.top/categories/frontend/6dd28e9b.html</id>
+    <link href="https://blog.vipz.top/categories/frontend/6dd28e9b.html"/>
+    <id>https://blog.vipz.top/categories/frontend/6dd28e9b.html</id>
     <published>2019-09-02T08:25:33.000Z</published>
     <updated>2020-08-03T01:23:09.779Z</updated>
     
@@ -558,12 +558,12 @@
     </summary>
     
     
-      <category term="前端" scheme="https://blog.bestthink.top/categories/frontend/"/>
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
     
     
-      <category term="CSS" scheme="https://blog.bestthink.top/tags/css/"/>
+      <category term="CSS" scheme="https://blog.vipz.top/tags/css/"/>
     
-      <category term="Bootstrap" scheme="https://blog.bestthink.top/tags/bootstrap/"/>
+      <category term="Bootstrap" scheme="https://blog.vipz.top/tags/bootstrap/"/>
     
   </entry>
   
