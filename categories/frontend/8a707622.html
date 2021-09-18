@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="微信小程序封装request请求, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
+    <meta name="keywords" content="微信小程序版本自动更新, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta name="description" content="技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>微信小程序封装request请求 | 干货小栈</title>
+    <title>微信小程序版本自动更新 | 干货小栈</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/vipzstudio/blog/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vipzstudio/blog/libs/awesome/css/all.css">
@@ -238,12 +238,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/custom/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/custom/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">微信小程序封装request请求</h1>
+                    <h1 class="description center-align post-title">微信小程序版本自动更新</h1>
                 </div>
             </div>
         </div>
@@ -385,21 +385,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-09
+                    2021-09-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-28
+                    2021-09-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    549
+                    215
                 </div>
                 
 
@@ -416,112 +416,41 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在小程序（其他）开发过程中，我们会遇到很多请求，如果每次都去写一遍。尤其是同一个接口好几个地方都要使用，有一点变动就需要全部找出来一个一个改，很不方便维护。所以我们就封装一下，统一管理吧~</p>
-<pre class=" language-javascript"><code class="language-javascript">wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    url<span class="token punctuation">:</span> <span class="token string">'test.php'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 仅为示例，并非真实的接口地址</span>
-    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        x<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-        y<span class="token punctuation">:</span> <span class="token string">''</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    header<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'content-type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span> <span class="token comment" spellcheck="true">// 默认值</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token function">success</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token function">fail</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>1、url（请求地址）<br>一般<code>url</code>都是有一个固定前缀（域名），只是后面不同。<br>例如：</p>
-<pre class=" language-txt"><code class="language-txt">https://domain.com/api/test1
-https://domain.com/api/test2
-https://domain.com/api/test3
-https://domain.com/api/test4
-...</code></pre>
-<p>所以我们在小程序根目录下新建<code>config.js</code>，设置一个全局常量<code>apiURL</code>用来存储前缀。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
-    apiURL<span class="token punctuation">:</span> <span class="token string">'https://domain.com/api'</span>
-<span class="token punctuation">}</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> config</code></pre>
-<p>2、method（HTTP 请求方法）</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> GET <span class="token operator">=</span> <span class="token string">'GET'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> POST <span class="token operator">=</span> <span class="token string">'POST'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> PUT <span class="token operator">=</span> <span class="token string">'PUT'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> FORM <span class="token operator">=</span> <span class="token string">'FORM'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> DELETE <span class="token operator">=</span> <span class="token string">'DELETE'</span><span class="token punctuation">;</span></code></pre>
-<p>3、header（请求header）<br><code>header</code>的话根据<code>method</code>设置就行了，默认。</p>
-<pre class=" language-javascript"><code class="language-javascript">header <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'content-type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-<p>4、data（参数）<br><code>get</code>请求直接传就可以了<br><code>post</code>请求<code>JSON.stringify(data)</code>一下</p>
-<p>5、在小程序<code>util</code>文件夹下新建<code>request.js</code>，并将下面代码放进去。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> $config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../config'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> baseURL <span class="token operator">=</span> $config<span class="token punctuation">.</span>apiURL<span class="token punctuation">;</span>
-<span class="token keyword">const</span> Request <span class="token operator">=</span> <span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">let</span> header <span class="token operator">=</span> <span class="token punctuation">{</span>
-            <span class="token string">'content-type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-        wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-            url<span class="token punctuation">:</span> baseURL <span class="token operator">+</span> url<span class="token punctuation">,</span>
-            method<span class="token punctuation">:</span> method<span class="token punctuation">,</span>
-            data<span class="token punctuation">:</span> method <span class="token operator">===</span> <span class="token string">'POST'</span> <span class="token operator">?</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">:</span> data<span class="token punctuation">,</span>
-            header<span class="token punctuation">:</span> header<span class="token punctuation">,</span>
-            <span class="token function">success</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token comment" spellcheck="true">//请求成功</span>
-                <span class="token comment" spellcheck="true">//判断状态码---errCode状态根据后端定义来判断</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                    <span class="token comment" spellcheck="true">//其他异常</span>
-                    <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'运行时错误,请稍后再试'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token function">fail</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token comment" spellcheck="true">//请求失败</span>
-                <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>小程序项目上线，后期还会有版本迭代，需要用户能在我们进行版本迭代后及时使用最新版本的功能。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>在<code>app.js</code>中增加以下代码:</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token function">onLaunch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>wx<span class="token punctuation">.</span><span class="token function">canIUse</span><span class="token punctuation">(</span><span class="token string">'getUpdateManager'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> updateManager <span class="token operator">=</span> wx<span class="token punctuation">.</span><span class="token function">getUpdateManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span> updateManager<span class="token punctuation">.</span><span class="token function">onCheckForUpdate</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>hasUpdate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                updateManager<span class="token punctuation">.</span><span class="token function">onUpdateReady</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    wx<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                        title<span class="token punctuation">:</span> <span class="token string">'更新提示'</span><span class="token punctuation">,</span>
+                        content<span class="token punctuation">:</span> <span class="token string">'新版本已经准备好，是否重启应用？'</span><span class="token punctuation">,</span>
+                        success<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>confirm<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                updateManager<span class="token punctuation">.</span><span class="token function">applyUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                updateManager<span class="token punctuation">.</span><span class="token function">onUpdateFailed</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    wx<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                        title<span class="token punctuation">:</span> <span class="token string">'有新版本'</span><span class="token punctuation">,</span>
+                        content<span class="token punctuation">:</span> <span class="token string">'新版本已经上线啦~，请您删除当前小程序，重新搜索打开哟~'</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Request</code></pre>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>1、在小程序<code>util</code>文件夹下新建<code>api.js</code>，并将下面代码放进去，然后创建请求，并导出。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> $request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./request'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> GET <span class="token operator">=</span> <span class="token string">'GET'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> POST <span class="token operator">=</span> <span class="token string">'POST'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> PUT <span class="token operator">=</span> <span class="token string">'PUT'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> FORM <span class="token operator">=</span> <span class="token string">'FORM'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> DELETE <span class="token operator">=</span> <span class="token string">'DELETE'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> Api <span class="token operator">=</span> <span class="token punctuation">{</span>
-    getList<span class="token punctuation">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">$request</span><span class="token punctuation">(</span>GET<span class="token punctuation">,</span> <span class="token string">'/getList'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//获取列表数据</span>
-    getDeatil<span class="token punctuation">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">$request</span><span class="token punctuation">(</span>GET<span class="token punctuation">,</span> <span class="token string">'/getDetail'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//获取详情数据</span>
-<span class="token punctuation">}</span>
-
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Api</code></pre>
-<p>2、这里我们以获取列表数据接口为例，在<code>.js</code>文件里引入<code>api.js</code></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> $api <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../utils/api.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    data<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    onLoad<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">let</span> sendData <span class="token operator">=</span> <span class="token punctuation">{</span>
-            siteId<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-            page<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-            pageSize<span class="token punctuation">:</span> <span class="token number">20</span>
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-        $api<span class="token punctuation">.</span><span class="token function">getList</span><span class="token punctuation">(</span>sendData<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//请求成功</span>
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">//请求失败</span>
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        wx<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            title<span class="token punctuation">:</span> <span class="token string">'提示'</span><span class="token punctuation">,</span>
+            content<span class="token punctuation">:</span> <span class="token string">'当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p><strong>注：</strong>在开发和体验版无法测试版本更新，需要在开发者工具编译设置里，勾选“下次编译时模拟更新”。</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -547,7 +476,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.vipz.top/categories/frontend/af86add3.html">https://blog.vipz.top/categories/frontend/af86add3.html</a>
+                    <a href="https://blog.vipz.top/categories/frontend/8a707622.html">https://blog.vipz.top/categories/frontend/8a707622.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -754,9 +683,59 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/categories/frontend/8a707622.html">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/vipzstudio/blog/medias/custom/12.jpg" class="responsive-img" alt="微信小程序版本自动更新">
+                        
+                        <span class="card-title">微信小程序版本自动更新</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            小程序项目上线，版本迭代方法。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/frontend/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mpminiprogram/">
+                        <span class="chip bg-color">微信小程序</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/categories/frontend/d8819d45.html">
                     <div class="card-image">
@@ -773,9 +752,9 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -793,54 +772,6 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     
                     <a href="/tags/vue/">
                         <span class="chip bg-color">Vue2.0</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/categories/database/d8819d45.html">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/vipzstudio/blog/medias/custom/9.jpg" class="responsive-img" alt="MySql学习笔记">
-                        
-                        <span class="card-title">MySql学习笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            MySql学习笔记。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-10
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/database/" class="post-category">
-                                    数据库
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/MySql/">
-                        <span class="chip bg-color">MySql</span>
                     </a>
                     
                 </div>

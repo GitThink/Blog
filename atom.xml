@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.vipz.top/"/>
-  <updated>2021-06-28T03:23:14.232Z</updated>
+  <updated>2021-09-18T09:13:58.922Z</updated>
   <id>https://blog.vipz.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序版本自动更新</title>
+    <link href="https://blog.vipz.top/categories/frontend/8a707622.html"/>
+    <id>https://blog.vipz.top/categories/frontend/8a707622.html</id>
+    <published>2021-09-18T09:00:16.000Z</published>
+    <updated>2021-09-18T09:13:58.922Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;小程序项目上线，后期还会有版本迭代，需要用户能在我们进行版本迭代后及时使用最新版本的功能。&lt;/p&gt;
+&lt;h2 id=&quot;实现&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
+    
+    
+      <category term="微信小程序" scheme="https://blog.vipz.top/tags/mpminiprogram/"/>
+    
+  </entry>
   
   <entry>
     <title>axios在vue-cli项目中的封装使用</title>
@@ -535,35 +563,6 @@
     
     
       <category term="CSS" scheme="https://blog.vipz.top/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bootstrap3网格系统兼容IE7</title>
-    <link href="https://blog.vipz.top/categories/frontend/6dd28e9b.html"/>
-    <id>https://blog.vipz.top/categories/frontend/6dd28e9b.html</id>
-    <published>2019-09-02T08:25:33.000Z</published>
-    <updated>2020-08-03T01:23:09.779Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;HTML基本结构&quot;&gt;&lt;a href=&quot;#HTML基本结构&quot; class=&quot;headerlink&quot; title=&quot;HTML基本结构&quot;&gt;&lt;/a&gt;HTML基本结构&lt;/h2&gt;&lt;pre class=&quot; language-html&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
-    
-    
-      <category term="CSS" scheme="https://blog.vipz.top/tags/css/"/>
-    
-      <category term="Bootstrap" scheme="https://blog.vipz.top/tags/bootstrap/"/>
     
   </entry>
   

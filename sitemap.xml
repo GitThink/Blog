@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vipz.top/categories/frontend/8a707622.html</loc>
+    
+    <lastmod>2021-09-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.vipz.top/friends/index.html</loc>
     
     <lastmod>2021-09-10</lastmod>
@@ -319,7 +326,7 @@
 
   <url>
     <loc>https://blog.vipz.top/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -327,63 +334,63 @@
   
   <url>
     <loc>https://blog.vipz.top/tags/css/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/tags/bootstrap/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/tags/javascript/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/tags/mongodb/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/tags/vscode/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/tags/vue/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/tags/MySql/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/tags/hexo/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/tags/mpminiprogram/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -392,28 +399,28 @@
   
   <url>
     <loc>https://blog.vipz.top/categories/frontend/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/categories/database/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/categories/tool/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.vipz.top/categories/blog/</loc>
-    <lastmod>2021-09-10</lastmod>
+    <lastmod>2021-09-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
