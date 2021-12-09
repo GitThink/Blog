@@ -392,14 +392,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-28
+                    2021-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    549
+                    775
                 </div>
                 
 
@@ -458,10 +458,14 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <p>5、在小程序<code>util</code>文件夹下新建<code>request.js</code>，并将下面代码放进去。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> $config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../config'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> baseURL <span class="token operator">=</span> $config<span class="token punctuation">.</span>apiURL<span class="token punctuation">;</span>
-<span class="token keyword">const</span> Request <span class="token operator">=</span> <span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> Request <span class="token operator">=</span> <span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> data<span class="token punctuation">,</span> hasCookie<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">let</span> header <span class="token operator">=</span> <span class="token punctuation">{</span>
             <span class="token string">'content-type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/* 解决sessionid不一致的问题 */</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>hasCookie<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            header<span class="token punctuation">[</span><span class="token string">'cookie'</span><span class="token punctuation">]</span> <span class="token operator">=</span> wx<span class="token punctuation">.</span><span class="token function">getStorageSync</span><span class="token punctuation">(</span><span class="token string">"sessionid"</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span><span class="token punctuation">;</span>
         wx<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
             url<span class="token punctuation">:</span> baseURL <span class="token operator">+</span> url<span class="token punctuation">,</span>
@@ -497,6 +501,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token keyword">const</span> Api <span class="token operator">=</span> <span class="token punctuation">{</span>
     getList<span class="token punctuation">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">$request</span><span class="token punctuation">(</span>GET<span class="token punctuation">,</span> <span class="token string">'/getList'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//获取列表数据</span>
     getDeatil<span class="token punctuation">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">$request</span><span class="token punctuation">(</span>GET<span class="token punctuation">,</span> <span class="token string">'/getDetail'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//获取详情数据</span>
+    getOpenId<span class="token punctuation">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">$request</span><span class="token punctuation">(</span>GET<span class="token punctuation">,</span> <span class="token string">'/getOpenId'</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//登录,该请求不携带cookie请求</span>
 <span class="token punctuation">}</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Api</code></pre>
@@ -520,6 +525,52 @@ module<span class="token punctuation">.</span>exports <span class="token operato
             <span class="token comment" spellcheck="true">//请求失败</span>
             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>3、解决<code>sessionid</code>不一致的问题，在登录时获取返回的报文里<code>sessionId</code>数据，把这个<code>Set-Cookie</code>的值进行本地存储，以便后面调用。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> $api <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../utils/api.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        userInfo<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        hasUserInfo<span class="token punctuation">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    onLoad<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getOpenId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    getOpenId<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        wx<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            success<span class="token punctuation">:</span> res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 发送 res.code 到后台换取 openId, sessionKey, unionId</span>
+                <span class="token keyword">let</span> code <span class="token operator">=</span> res<span class="token punctuation">.</span>code<span class="token punctuation">;</span>
+                $api<span class="token punctuation">.</span><span class="token function">getOpenId</span><span class="token punctuation">(</span><span class="token punctuation">{</span> code <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                    <span class="token keyword">let</span> openid <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>openid<span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">/* 根据后台返回字段hasUserInfo的值判断是否是网站会员 */</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>hasUserInfo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        wx<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                            title<span class="token punctuation">:</span> <span class="token string">'提示'</span><span class="token punctuation">,</span>
+                            content<span class="token punctuation">:</span> <span class="token string">'您还不是该网站的会员，请先注册。'</span><span class="token punctuation">,</span>
+                            success<span class="token punctuation">:</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                                <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>confirm<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                    wx<span class="token punctuation">.</span><span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                                        url<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`/pages/register/register?openId=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>openid<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span>
+                                    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                                <span class="token punctuation">}</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                            userInfo<span class="token punctuation">:</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>data<span class="token punctuation">,</span>
+                            hasUserInfo<span class="token punctuation">:</span> <span class="token boolean">true</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>userInfo <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+                        wx<span class="token punctuation">.</span><span class="token function">removeStorageSync</span><span class="token punctuation">(</span><span class="token string">'sessionid'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//清除sessionId，否则res.header['Set-Cookie']会报错</span>
+                        wx<span class="token punctuation">.</span><span class="token function">setStorageSync</span><span class="token punctuation">(</span><span class="token string">"sessionid"</span><span class="token punctuation">,</span> res<span class="token punctuation">.</span>header<span class="token punctuation">[</span><span class="token string">"Set-Cookie"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
@@ -1028,7 +1079,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.2k</span>&nbsp;字
+                class="white-color">37.2k</span>&nbsp;字
             
             
             

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.vipz.top/"/>
-  <updated>2021-09-24T00:11:29.966Z</updated>
+  <updated>2021-12-09T00:54:46.869Z</updated>
   <id>https://blog.vipz.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式简述</title>
+    <link href="https://blog.vipz.top/categories/frontend/fd7746b4.html"/>
+    <id>https://blog.vipz.top/categories/frontend/fd7746b4.html</id>
+    <published>2021-12-09T00:35:53.000Z</published>
+    <updated>2021-12-09T00:54:46.869Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;当使用构造函数创造正则对象时，需要常规的字符转义规则（在前面加反斜杠 \），比如，以下两种方式的定义是等价的。&lt;/p&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
+    
+    
+      <category term="Javascript" scheme="https://blog.vipz.top/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序版本自动更新</title>
@@ -77,7 +105,7 @@
     <link href="https://blog.vipz.top/categories/frontend/af86add3.html"/>
     <id>https://blog.vipz.top/categories/frontend/af86add3.html</id>
     <published>2021-06-09T06:03:42.000Z</published>
-    <updated>2021-06-28T02:50:33.049Z</updated>
+    <updated>2021-12-09T01:09:37.752Z</updated>
     
     <summary type="html">
     
@@ -539,30 +567,6 @@
       <category term="CSS" scheme="https://blog.vipz.top/tags/css/"/>
     
       <category term="Javascript" scheme="https://blog.vipz.top/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS规范</title>
-    <link href="https://blog.vipz.top/categories/frontend/83dcefb7.html"/>
-    <id>https://blog.vipz.top/categories/frontend/83dcefb7.html</id>
-    <published>2020-07-14T02:50:41.000Z</published>
-    <updated>2020-10-28T03:34:55.544Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;分类方法&quot;&gt;&lt;a href=&quot;#分类方法&quot; class=&quot;headerlink&quot; title=&quot;分类方法&quot;&gt;&lt;/a&gt;分类方法&lt;/h2&gt;&lt;h3 id=&quot;CSS文件的分类和引用顺序&quot;&gt;&lt;a href=&quot;#CSS文件的分类和引用顺序&quot; class=&quot;headerlink&quot; title=&quot;CSS文件的分类和引用顺序&quot;&gt;&lt;/a&gt;CSS文件的分类和引用顺序&lt;/h3&gt;&lt;p&gt;通常，一个项目我们只引用一个&lt;code&gt;CSS&lt;/code&gt;，但是对于较大的项目，我们需要把&lt;code&gt;CSS&lt;/code&gt;文件进行分类。&lt;br&gt;我们按照&lt;code&gt;CSS&lt;/code&gt;的性质和用途，将&lt;code&gt;CSS&lt;/code&gt;文件分成“公共型样式”、“特殊型样式”、“皮肤型样式”，并以此顺序引用（按需求决定是否添加版本号）。&lt;br&gt;1.公共型样式：包括了以下几个部分：“标签的重置和设置默认值”、“统一调用背景图和清除浮动或其他需统一处理的长样式”、“网站通用布局”、“通用模块和其扩展”、“元件和其扩展”、“功能类样式”、“皮肤类样式”。&lt;br&gt;2.特殊型样式：当某个栏目或页面的样式与网站整体差异较大或者维护率较高时，可以独立引用一个样式：“特殊的布局、模块和元件及扩展”、“特殊的功能、颜色和背景”，也可以是某个大型控件或模块的独立样式。&lt;br&gt;3.皮肤型样式：如果产品需要换肤功能，那么我们需要将颜色、背景等抽离出来放在这里。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&amp;lt;link href=&amp;quot;assets/css/public.css&amp;quot; /&amp;gt;
-&amp;lt;link href=&amp;quot;assets/css/home.css&amp;quot; /&amp;gt;
-&amp;lt;link href=&amp;quot;assets/css/skin.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
-    
-    
-      <category term="CSS" scheme="https://blog.vipz.top/tags/css/"/>
     
   </entry>
   
