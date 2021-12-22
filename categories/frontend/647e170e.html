@@ -399,7 +399,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    328
+                    326
                 </div>
                 
 
@@ -418,7 +418,8 @@
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于<code>HTTPS</code>是<code>HTTP over Secure Socket Layer</code>，以安全为目标的<code>HTTP</code>通道，所以在<code>HTTPS</code>承载的页面上不允许出现<code>http</code>请求，一旦出现就是提示或报错。下面汇总几种解决方案:</p>
 <h2 id="方法1：服务端设置header"><a href="#方法1：服务端设置header" class="headerlink" title="方法1：服务端设置header"></a>方法1：服务端设置header</h2><p>好在<code>W3C</code>工作组考虑到了我们升级<code>HTTPS</code>的艰难，在2015年4月份就出了一个<code>Upgrade Insecure Requests</code>的草案，他的作用就是让浏览器自动升级请求。在我们服务器的响应头中加入：</p>
-<pre><code>header(&quot;Content-Security-Policy: upgrade-insecure-requests&quot;);</code></pre><h2 id="方法2：页面设置meta头"><a href="#方法2：页面设置meta头" class="headerlink" title="方法2：页面设置meta头"></a>方法2：页面设置meta头</h2><p>在页面中加入<code>meta</code>头：</p>
+<pre class=" language-bash"><code class="language-bash">header<span class="token punctuation">(</span><span class="token string">"Content-Security-Policy: upgrade-insecure-requests"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="方法2：页面设置meta头"><a href="#方法2：页面设置meta头" class="headerlink" title="方法2：页面设置meta头"></a>方法2：页面设置meta头</h2><p>在页面中加入<code>meta</code>头：</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content-Security-Policy<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>upgrade-insecure-requests<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
 <blockquote>
 <p>如果页面比较多，需要统一改变的话，可以将这条语句添加到全局<code>js</code>文件里，全局调用。</p>
