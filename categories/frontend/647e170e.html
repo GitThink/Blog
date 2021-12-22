@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【04】Vue基础：v-text和v-html的使用, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
+    <meta name="keywords" content="https页面加载http资源报错时的解决方案, 技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta name="description" content="技术潘,干货小栈,个人技术笔记,记录学习/开发问题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【04】Vue基础：v-text和v-html的使用 | 干货小栈</title>
+    <title>https页面加载http资源报错时的解决方案 | 干货小栈</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/vipzstudio/blog/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vipzstudio/blog/libs/awesome/css/all.css">
@@ -238,12 +238,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/custom/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/custom/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【04】Vue基础：v-text和v-html的使用</h1>
+                    <h1 class="description center-align post-title">https页面加载http资源报错时的解决方案</h1>
                 </div>
             </div>
         </div>
@@ -360,8 +360,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">Vue2.0</span>
+                            <a href="/tags/http/">
+                                <span class="chip bg-color">http</span>
                             </a>
                         
                     </div>
@@ -385,21 +385,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-22
+                    2021-12-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-22
+                    2021-12-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    154
+                    328
                 </div>
                 
 
@@ -416,33 +416,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="v-text-的使用"><a href="#v-text-的使用" class="headerlink" title="v-text 的使用"></a>v-text 的使用</h2><p>模版写法：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<p>js写法：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">{</span>
-            title<span class="token punctuation">:</span> <span class="token string">'v-text'</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>在浏览器运行此文件，可以看到成功显示出<code>v-text</code>。</p>
-<h2 id="v-html-的使用"><a href="#v-html-的使用" class="headerlink" title="v-html 的使用"></a>v-html 的使用</h2><p>模版写法：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-html</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<p>js写法：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">{</span>
-            title<span class="token punctuation">:</span> <span class="token string">'&lt;h1>v-html&lt;/h1>'</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-<p>在浏览器运行此文件，可以看到成功显示出<code>v-html</code>。</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于<code>HTTPS</code>是<code>HTTP over Secure Socket Layer</code>，以安全为目标的<code>HTTP</code>通道，所以在<code>HTTPS</code>承载的页面上不允许出现<code>http</code>请求，一旦出现就是提示或报错。下面汇总几种解决方案:</p>
+<h2 id="方法1：服务端设置header"><a href="#方法1：服务端设置header" class="headerlink" title="方法1：服务端设置header"></a>方法1：服务端设置header</h2><p>好在<code>W3C</code>工作组考虑到了我们升级<code>HTTPS</code>的艰难，在2015年4月份就出了一个<code>Upgrade Insecure Requests</code>的草案，他的作用就是让浏览器自动升级请求。在我们服务器的响应头中加入：</p>
+<pre><code>header(&quot;Content-Security-Policy: upgrade-insecure-requests&quot;);</code></pre><h2 id="方法2：页面设置meta头"><a href="#方法2：页面设置meta头" class="headerlink" title="方法2：页面设置meta头"></a>方法2：页面设置meta头</h2><p>在页面中加入<code>meta</code>头：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content-Security-Policy<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>upgrade-insecure-requests<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
 <blockquote>
-<p><strong>注意</strong>：生产环境中动态渲染<code>HTML</code>是非常危险的，容易导致<code>XSS</code>攻击。所以在使用<code>v-html</code>时，不要在用户提交或可操作的网页上使用。</p>
+<p>如果页面比较多，需要统一改变的话，可以将这条语句添加到全局<code>js</code>文件里，全局调用。</p>
 </blockquote>
+<h2 id="方法3：删除链接中的http"><a href="#方法3：删除链接中的http" class="headerlink" title="方法3：删除链接中的http:"></a>方法3：删除链接中的http:</h2><p>推荐方法，不指定具体协议，使用资源协议自适配，比如，当前为<code>https</code>页面，那么就是<code>https</code>资源，如果是<code>http</code>页面，那么就是<code>http</code>资源。具体方法超简单：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>//blog.vipz.top/libs/jquery/jquery.min.js<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="方式4：分别部署应用服务"><a href="#方式4：分别部署应用服务" class="headerlink" title="方式4：分别部署应用服务"></a>方式4：分别部署应用服务</h2><p>最笨的方法，直接复制原有代码，写成两套代码，一套为<code>http</code>使用，一套为<code>https</code>使用，<code>http</code>和<code>https</code>各自指向各自服务。</p>
 
             </div>
             <hr/>
@@ -468,7 +451,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.vipz.top/categories/frontend/a15d25e1.html">https://blog.vipz.top/categories/frontend/a15d25e1.html</a>
+                    <a href="https://blog.vipz.top/categories/frontend/647e170e.html">https://blog.vipz.top/categories/frontend/647e170e.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -506,8 +489,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">Vue2.0</span>
+                                <a href="/tags/http/">
+                                    <span class="chip bg-color">http</span>
                                 </a>
                             
                         </div>
@@ -675,28 +658,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/categories/frontend/d65a1577.html">
+                <a href="/categories/frontend/647e170e.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/vipzstudio/blog/medias/custom/6.jpg" class="responsive-img" alt="【05】Vue基础：v-on的使用">
+                        <img src="https://cdn.jsdelivr.net/gh/vipzstudio/blog/medias/custom/14.jpg" class="responsive-img" alt="https页面加载http资源报错时的解决方案">
                         
-                        <span class="card-title">【05】Vue基础：v-on的使用</span>
+                        <span class="card-title">https页面加载http资源报错时的解决方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue使用v-on指令监听DOM事件，在开发过程中，可以将其绑定在DOM节点上，以此监听DOM事件来触发一些javascript代码。
+                            由于HTTPS是HTTP over Secure Socket Layer，以安全为目标的HTTP通道，所以在HTTPS承载的页面上不允许出现http请求，一旦出现就是提示或报错。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -709,11 +693,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">Vue2.0</span>
+                    <a href="/tags/http/">
+                        <span class="chip bg-color">http</span>
                     </a>
                     
                 </div>
@@ -727,23 +712,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/categories/frontend/8d076785.html">
+                <a href="/categories/frontend/fd7746b4.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/vipzstudio/blog/medias/custom/4.jpg" class="responsive-img" alt="特殊日子全站网页自动变灰">
+                        <img src="https://cdn.jsdelivr.net/gh/vipzstudio/blog/medias/custom/13.jpg" class="responsive-img" alt="正则表达式简述">
                         
-                        <span class="card-title">特殊日子全站网页自动变灰</span>
+                        <span class="card-title">正则表达式简述</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            依赖js定期自动变灰。
+                            正则表达式是对文本模式的描述，常用来检索、替换那些符合某个模式的文本。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
                             </span>
                         <span class="publish-author">
                             
@@ -759,10 +744,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">CSS</span>
-                    </a>
                     
                     <a href="/tags/javascript/">
                         <span class="chip bg-color">Javascript</span>
