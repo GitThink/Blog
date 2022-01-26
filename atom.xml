@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.vipz.top/"/>
-  <updated>2021-12-22T02:51:00.999Z</updated>
+  <updated>2022-01-26T07:19:08.005Z</updated>
   <id>https://blog.vipz.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序自定义顶部组件</title>
+    <link href="https://blog.vipz.top/categories/frontend/13792798.html"/>
+    <id>https://blog.vipz.top/categories/frontend/13792798.html</id>
+    <published>2022-01-26T05:48:06.000Z</published>
+    <updated>2022-01-26T07:19:08.005Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;获取系统信息&quot;&gt;&lt;a href=&quot;#获取系统信息&quot; class=&quot;headerlink&quot; title=&quot;获取系统信息&quot;&gt;&lt;/a&gt;获取系统信息&lt;/h2&gt;&lt;p&gt;首先在&lt;code&gt;app.js&lt;/code&gt;中，增加以下代码，用于获取系统信息。&lt;/p&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
+    
+    
+      <category term="微信小程序" scheme="https://blog.vipz.top/tags/mpminiprogram/"/>
+    
+  </entry>
   
   <entry>
     <title>https页面加载http资源报错时的解决方案</title>
@@ -538,33 +566,6 @@
     
     
       <category term="VSCode" scheme="https://blog.vipz.top/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信小程序中使用阿里图标库iconfont</title>
-    <link href="https://blog.vipz.top/categories/frontend/84b12bae.html"/>
-    <id>https://blog.vipz.top/categories/frontend/84b12bae.html</id>
-    <published>2020-08-12T02:02:00.000Z</published>
-    <updated>2020-09-18T02:58:09.770Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;第一步：下载需要的字体图标&quot;&gt;&lt;a href=&quot;#第一步：下载需要的字体图标&quot; class=&quot;headerlink&quot; title=&quot;第一步：下载需要的字体图标&quot;&gt;&lt;/a&gt;第一步：下载需要的字体图标&lt;/h2&gt;&lt;p&gt;进入阿里图标官网&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="https://blog.vipz.top/categories/frontend/"/>
-    
-    
-      <category term="微信小程序" scheme="https://blog.vipz.top/tags/mpminiprogram/"/>
     
   </entry>
   
